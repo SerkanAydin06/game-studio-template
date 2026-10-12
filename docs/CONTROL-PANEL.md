@@ -12,7 +12,7 @@ Depo yöneticisi GitHub'da **Settings → Pages → Build and deployment → Sou
 ## Çalıştırma
 Depoyu indir/klonla, `control-panel/index.html` dosyasını Chrome veya Edge ile aç. Herhangi bir kurulum, Python, Node, servis, API anahtarı veya ücretli AI isteği gerekmez. Panel tamamen istemci tarafında çalışır.
 
-- **Projeler & İlerleme:** tarayıcıda proje ve görev kaydı, görev durumu, JSON yedek dışa/içe aktarma; GitHub'a otomatik yazmaz.\n- **Genel Bakış:** sistem rehberleri ve canlı public çekirdek CI özeti.
+- **Projeler & İlerleme:** tarayıcıda proje ve görev kaydı, görev durumu, JSON yedek dışa/içe aktarma; GitHub'a otomatik yazmaz; proje kartlarında public oyun depolarının son main dalı GitHub Actions sonuçlarını salt-okunur görüntüler.\n- **Genel Bakış:** sistem rehberleri ve canlı public çekirdek CI özeti.
 - **Yeni Oyun:** kısa oyun tanımını alıp ChatGPT'ye taşınacak başlangıç metnini hazırlar. Yeni repo açma bağlantısı vardır; repo otomatik açılmaz.
 - **Görev Merkezi:** tek kod yazıcı ilkesine uygun, kopyalanabilir görev paketi oluşturur.
 - **Testler & CI:** GitHub public API aracılığıyla `main` dalındaki son workflow sonuçlarını okur. Bu alan yalnız çekirdek deposunundur; oyun kendi deposunda test edilir.
@@ -26,6 +26,6 @@ Panel proje/görev listelerini tarayıcının yerel depolamasına (localStorage)
 3. Yeni oyun adı ve açıklaması gir, başlangıç metnini üret ve kopyala.
 4. Geçerli bir `owner/repo` ile görev metni oluştur, geçersiz repo değerini reddettiğini kontrol et.
 5. CI ekranında sonuçları yenile; bağlantı yokken hata mesajının göründüğünü doğrula.
-6. Dar pencere boyutunda panel menüsü ve formların kullanışlı olduğunu kontrol et.
+6. Proje kartında CI sonuçlarını kontrol et ve Yenile butonunu dene; özel depoda veya API sınırında bilgilendirme çıktığını doğrula.\n7. Dar pencere boyutunda panel menüsü ve formların kullanışlı olduğunu kontrol et.
 
 Statik dosya varlığı `scripts/check-template.sh` içinde denetlenir. Bu kontrol tarayıcı çalıştırması veya uçtan uca etkileşim testi yerine geçmez.
