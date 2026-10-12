@@ -16,10 +16,10 @@ Depoyu indir/klonla, `control-panel/index.html` dosyasını Chrome veya Edge ile
 - **Yeni Oyun:** kısa oyun tanımını alıp ChatGPT'ye taşınacak başlangıç metnini hazırlar. Yeni repo açma bağlantısı vardır; repo otomatik açılmaz.
 - **Görev Merkezi:** tek kod yazıcı ilkesine uygun, kopyalanabilir görev paketi oluşturur.
 - **Testler & CI:** GitHub public API aracılığıyla `main` dalındaki son workflow sonuçlarını okur. Bu alan yalnız çekirdek deposunundur; oyun kendi deposunda test edilir.
-- **Kota & Bütçe:** tasarruf politikası ve gerçek tüketim CSV başlığı.
+- **Sonuç & Kullanım:** biten görevlerin test/PR kanıtlarını yerel kaydetme, ölçülen sağlayıcı kullanımını kaydetme, CSV/JSON dışa aktarma. Gizli API anahtarı gerekmez.\n- **Kota & Bütçe:** tasarruf politikası ve gerçek tüketim CSV başlığı.
 
 ## Sınırlar
-Panel proje/görev listelerini tarayıcının yerel depolamasına (localStorage) kaydeder. Yeni oyun ve görev metni formları sayfa yenilemesinde sıfırlanır. Özel/ortak bilgisayarda hassas bilgi girmeyin ve gerekirse site verilerini temizleyin. Veriler cihazlar arasında otomatik eşitlenmez; JSON yedeğini kendiniz koruyun. GitHub API isteği yalnız herkese açık Actions sonuçlarını okumak içindir. Tarayıcı ağı, CORS veya GitHub hız limiti engellerse sonuçlar görünmeyebilir; doğrudan Actions sayfası bağlantısı kullanılır. Girdi doğrulaması var ancak panel kod yazmaz, görevleri yapay zekâ servislerine otomatik göndermez, oyun deposu oluşturmaz veya bağımsız tamamlanma iddiasında bulunmaz.
+Panel proje/görev listelerini ve manuel sonuç/kullanım kayıtlarını tarayıcının yerel depolamasına (localStorage) kaydeder. Proje JSON yedeği, sonuç kayıtlarının yedeğinden ayrıdır; sonuçları ayrıca JSON dışa aktarın. Yeni oyun ve görev metni formları sayfa yenilemesinde sıfırlanır. Özel/ortak bilgisayarda hassas bilgi girmeyin ve gerekirse site verilerini temizleyin. Veriler cihazlar arasında otomatik eşitlenmez; JSON yedeğini kendiniz koruyun. GitHub API isteği yalnız herkese açık Actions sonuçlarını okumak içindir. Tarayıcı ağı, CORS veya GitHub hız limiti engellerse sonuçlar görünmeyebilir; doğrudan Actions sayfası bağlantısı kullanılır. Girdi doğrulaması var ancak panel kod yazmaz, görevleri yapay zekâ servislerine otomatik göndermez, oyun deposu oluşturmaz veya bağımsız tamamlanma iddiasında bulunmaz.
 
 ## Manuel kalite kontrol
 1. HTML dosyasını tarayıcıda aç. Sekmeler arasında geçiş yap.\n2. Proje ve görev ekle, durumunu değiştir, sayfayı yenile ve kayıtların korunduğunu denetle. JSON yedeğini indirip geri yükle; geçersiz JSON dosyasını reddettiğini denetle.
@@ -29,3 +29,6 @@ Panel proje/görev listelerini tarayıcının yerel depolamasına (localStorage)
 6. Proje kartında CI sonuçlarını kontrol et ve Yenile butonunu dene; özel depoda veya API sınırında bilgilendirme çıktığını doğrula.\n7. Dar pencere boyutunda panel menüsü ve formların kullanışlı olduğunu kontrol et.
 
 Statik dosya varlığı `scripts/check-template.sh` içinde denetlenir. Bu kontrol tarayıcı çalıştırması veya uçtan uca etkileşim testi yerine geçmez.
+
+## Önceki panelden taşınan işlevler
+Görev sonucunu commit/PR bağlantısıyla kaydetme ve USAGE.csv biçiminde gerçek tüketim kaydetme bu sürümde yereldir. Önceki hesapla eşitlenen bulut veri alanı taşınmadı; güvenli hesap doğrulaması olmadan istemciye gizli yetki anahtarı eklenmez.
