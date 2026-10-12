@@ -1,0 +1,64 @@
+name: Game validation
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'game/**'
+      - 'scripts/**'
+      - '.godot-*'
+      - '.github/workflows/game-validation.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'game/**'
+      - 'scripts/**'
+      - '.godot-*'
+      - '.github/workflows/game-validation.yml'
+  workflow_dispatch:
+    inputs:
+      export_windows:
+        description: 'Also export a Windows executable (not needed for Godot editor testing)'
+        type: boolean
+        default: false
+        required: false
+permissions:
+  contents: read
+concurrency:
+  group: game-validation-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    if: github.event_name == 'workflow_dispatch' || github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install verified engine
+        env:
+          EXPORT_WINDOWS: ${{ inputs.export_windows }}
+        run: |
+          if [[ "$EXPORT_WINDOWS" == true ]]; then
+            bash scripts/godot-install.sh --templates
+          else
+            bash scripts/godot-install.sh
+          fi
+      - name: Import and smoke test
+        env:
+          EXPORT_WINDOWS: ${{ inputs.export_windows }}
+        run: |
+          if [[ "$EXPORT_WINDOWS" == true ]]; then
+            bash scripts/godot-check.sh --export
+          else
+            bash scripts/godot-check.sh
+          fi
+      - name: Optional Windows download
+        if: ${{ inputs.export_windows }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: game-windows
+          path: builds/windows/
+          retention-days: 1
+          if-no-files-found: error

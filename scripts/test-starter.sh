@@ -10,7 +10,8 @@ for path in COORDINATOR.md ROUTING.md STATE.md TASK.md PROJECT.md BUDGET.md TEST
   cmp "$core/templates/game/$path" "$tmp/game/$path"
 done
 test -f "$tmp/game/.studio/SOURCE_COMMIT"
-test ! -e "$tmp/game/.github"
+cmp "$core/templates/game/.github/workflows/game-validation.yml" "$tmp/game/.github/workflows/game-validation.yml"
+test ! -e "$tmp/game/.github/workflows/studio-checks.yml"
 test ! -e "$tmp/game/validation"
 [[ "$(cat "$tmp/game/.godot-project")" == game ]]
 [[ "$(cat "$tmp/game/.studio/CORE_VERSION")" == "$(cat "$core/CORE_VERSION")" ]]
@@ -31,4 +32,4 @@ if [[ "${1:-}" == --godot ]]; then
   ln -s "$core/.tools" "$tmp/game/.tools"
   bash "$tmp/game/scripts/godot-check.sh"
 fi
-echo "PASS: isolated starter, provenance, no workflows, no overwrites or nested games."
+echo "PASS: isolated starter, provenance, game CI, no overwrites or nested games."

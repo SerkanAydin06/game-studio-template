@@ -1,12 +1,12 @@
-# Pardex Üretici — oyun üretim çekirdeği — 3.2.1
+# Pardex Üretici — oyun üretim çekirdeği — 3.3.0
 Bu depo ortak çalışma kuralları, araç rehberleri ve yeni proje başlangıcıdır.
-**Oyun kodu ve oyuna özel üretim ayrı özel depoda geliştirilir.**
+**Oyun kodu ve oyuna özel üretim ayrı public depoda geliştirilir.**
 Araçlar: Gemini Pro, Claude Code web, ChatGPT Pro/Codex ve Meshy Pro. Copilot kullanılmaz.
 Kullanıcı bilgisayarında Python veya yerel AI CLI gerekmez. Normal deneme Godot'ta F5 ile yapılır.
 
 ## Yeni sohbetten başlat
 ChatGPT'ye depo bağlantısını verip “Bu depoya bağlan; START_HERE.md talimatıyla yeni oyun sürecini başlat” yaz.
-ChatGPT kısa oyun tarifini alır, yetkisi varsa ayrı özel depoyu açar; yoksa senden açıp bağlantısını vermeni ister.
+ChatGPT kısa oyun tarifini alır, yetkisi varsa ayrı public depoyu açar; yoksa senden açıp bağlantısını vermeni ister.
 Süreci ChatGPT yönetir. Diğer araçlara yalnız gereken hazır görev metnini taşırsın.
 [Kısa başlangıç](START_HERE.md) · [Yönetici akışı](docs/CHATGPT-YONETICI.md)
 
@@ -52,7 +52,7 @@ Public çekirdekte main push/PR şablon kontrolleri otomatik çalışır.
 Godot kontrolü yalnız ilgili dosyalar değiştiğinde çalışır; çekirdek sahnesini ve
 ayrı üretilen oyun başlangıcını aynı doğrulanmış motorla import/smoke testinden geçirir. Depo private ise otomatik işler atlanır.
 Görünürlük değişikliği tek başına çalışma başlatmaz; ilk kontrol elle başlatılabilir.
-Oyun depolarına workflow kopyalanmaz; onların görünürlüğü ayrı karardır.
+Yeni oyunlar public açılır ve kendi Godot CI workflow'unu alır. Mevcut depoların görünürlüğü otomatik değiştirilmez.
 Godot kontrolünde Windows export varsayılan kapalıdır. Kullanıcı istediğinde açılır.
 Günlük geliştirme kontrolü AI'nın cloud ortamında, görsel/oynanış testi kullanıcının Godot'unda.
 Önceki GitHub Godot import/smoke/export ve şablon kontrolleri başarıyla doğrulandı:

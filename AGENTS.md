@@ -10,8 +10,9 @@ read docs/ARAC-SKILL-AGENT.md when routing requires it. No duplicate reviews by 
 Game-specific changes never belong here. Read docs/CEKIRDEK-SINIRI.md before general self-improvement.
 General improvements use a separate core task/branch, evidence, checks and rollback; never auto-sync games.
 Use local/cloud scripts for mechanical work. Existing subscription access first; no automatic paid API fallback.
-Core exception: public repository push/PR checks are enabled with a private-repository skip guard.
-Game repositories still receive no automatic workflows. Manual dispatch/export only when needed.
+New games default to public repositories, as explicitly requested by the user.
+Core and game push/PR checks use standard runners with a private-repository skip guard.
+Game starters include their own CI workflow. Export remains manual.
 See docs/GITHUB-ACTIONS.md for current core policy; older manual-only core notes are superseded.
 Do not claim token savings or balances without measurements. Quotas differ by provider.
 Prefer a suitable standard model/effort; escalate only for a concrete blocker or risky architecture.

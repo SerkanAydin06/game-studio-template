@@ -5,7 +5,7 @@ Yeni sohbette kayıttan devam et. Bekleyen görevi tekrar başlatma.
 ChatGPT planlar ve kabul eder; görev başına tek yazıcı (ChatGPT/Codex veya Claude).
 Gemini araştırma/görsel açık için, Meshy gerekli 3D varlık için. Her aracı her işte kullanma.
 Kısa işi mevcut araçla bitir; devir toplam işi azaltıyorsa görev paketi ver.
-Ücretli API, otomatik Actions/export yok. F5 normal test; kredi miktarı uydurma.
+Public oyun + standart runner CI varsayılan. Ücretli API ve otomatik export yok. F5 normal test; kredi miktarı uydurma.
 
 ## Doldurulmuş olarak verilecek görev paketi
 - Araç ve görev kimliği:

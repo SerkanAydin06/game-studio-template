@@ -8,7 +8,8 @@ The user relays ready prompts/results; do not assume cross-provider automation.
 Do not repeat the same work across models. Read targeted files; avoid whole-repo/context dumps.
 Use a suitable standard model/effort; escalate for concrete risk or blockers.
 After two failed fixes of the same error, inspect evidence and change the method.
-No automatic paid API calls, Actions runs, executable exports or asset generation.
+Default repository visibility: public, per user preference. Standard-runner game CI is enabled.
+No automatic paid API calls, executable exports or asset generation.
 Use existing subscription access. Follow explicit task/asset budgets without repeated routine approvals.
 Reuse assets; record source/license and production decisions in ASSETS.csv.
 Keep editable scenes/UI in Godot resources. Preserve editor/runtime consistency.
