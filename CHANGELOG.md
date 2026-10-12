@@ -1,5 +1,9 @@
 # Çekirdek değişiklikleri
 
+## Yayınlanmamış
+actions/checkout v7.0.1 ve actions/upload-artifact v7.0.1 (Node 24) SHA ile sabitlendi;
+Node 20 kullanımdan kaldırma uyarısı giderildi. Oyun başlangıcının CI'sı da güncellendi.
+
 ## 3.5.0
 Öğrenme döngüsü: oyunlar çekirdek eksiklerini CORE-FEEDBACK.md'ye tek satırla yazar (ek AI turu yok);
 haftalık core-feedback.yml (AI yok, anahtar yok) GAMES.txt'deki public oyunların açık satırlarını
