@@ -33,6 +33,9 @@ Kendin yazamıyorsan kod yazıcısına kayıtları güncellemesini görev paketi
 Tamamlandığında kısa sonuç ve tek sonraki adım ver; görsel testi kullanıcı yapar.
 
 ## Uygun araç ve gelişim
+Kilometre taşı kabulünde CORE-FEEDBACK.md'ye bak: engelleyici veya en az iki kez görülmüş küçük
+düzeltme varsa tek çekirdek bakım paketi ver (çekirdek docs/CEKIRDEK-SINIRI.md "Öğrenme döngüsü").
+Yoksa ek iş açma. Yeni kilometre taşı başında scripts/core-update-check.sh çıktısına bak.
 Gerektiğinde ROUTING.md ile araç/skill/agent seç; işi her sağlayıcıya gönderme.
 Oyun özelindeki optimizasyon bu depoda kalır. Genel çekirdek geliştirmesi ayrı bakım görevidir.
 Önce oynanabilir mekanik ve tek görsel örnek, sonra toplu varlık üretimi.

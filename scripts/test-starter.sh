@@ -6,10 +6,11 @@ tmp=$(mktemp -d)
 trap 'rm -rf -- "$tmp"' EXIT
 bash "$core/scripts/new-game.sh" "$tmp/game" test-game
 test -f "$tmp/game/game/project.godot"
-for path in COORDINATOR.md ROUTING.md STATE.md TASK.md PROJECT.md BUDGET.md TESTS.md; do
+for path in CORE-FEEDBACK.md COORDINATOR.md ROUTING.md STATE.md TASK.md PROJECT.md BUDGET.md TESTS.md; do
   cmp "$core/templates/game/$path" "$tmp/game/$path"
 done
 test -f "$tmp/game/.studio/SOURCE_COMMIT"
+cmp "$core/scripts/core-update-check.sh" "$tmp/game/scripts/core-update-check.sh"
 for path in smoke_test.gd tests/test_case.gd tests/test_starter.gd; do
   cmp "$core/templates/game/game/$path" "$tmp/game/game/$path"
 done

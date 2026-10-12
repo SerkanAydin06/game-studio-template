@@ -8,7 +8,7 @@ slug="$2"
 target=$(realpath -m -- "$1")
 case "$target/" in "$core/"*) echo "Game must be outside the core repository." >&2; exit 1;; esac
 [[ ! -e "$target" && ! -L "$target" ]] || { echo "Target already exists; nothing overwritten." >&2; exit 1; }
-for path in templates/game CORE_VERSION .godot-version .gitattributes .gitignore scripts/godot-install.sh scripts/godot-check.sh; do
+for path in templates/game CORE_VERSION .godot-version .gitattributes .gitignore scripts/godot-install.sh scripts/godot-check.sh scripts/core-update-check.sh; do
   [[ -e "$core/$path" ]] || { echo "Missing core file: $path" >&2; exit 1; }
 done
 source_commit=unversioned
@@ -26,7 +26,7 @@ cp "$core/CORE_VERSION" "$target/.studio/CORE_VERSION"
 printf '%s\n' "$source_commit" > "$target/.studio/SOURCE_COMMIT"
 printf '%s\n' 'https://github.com/SerkanAydin06/pardex-uretici' > "$target/.studio/SOURCE_REPOSITORY"
 cp "$core/.godot-version" "$core/.gitattributes" "$core/.gitignore" "$target/"
-cp "$core/scripts/godot-install.sh" "$core/scripts/godot-check.sh" "$target/scripts/"
+cp "$core/scripts/godot-install.sh" "$core/scripts/godot-check.sh" "$core/scripts/core-update-check.sh" "$target/scripts/"
 printf '%s\n' game > "$target/.godot-project"
 printf '%s\n' 'id,path_or_url,source,license_reference,approved,reuse_notes' > "$target/ASSETS.csv"
 printf '%s\n' 'date,task,provider,unit,before,after,measurement_source,completed_result' > "$target/USAGE.csv"

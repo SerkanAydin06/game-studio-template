@@ -24,4 +24,9 @@ Use a task branch; preserve unrelated work; no force push or destructive automat
 Record commit/PR, actual test outcome, blockers and next step at handoff.
 Read ROUTING.md when choosing tools/skills/agents; use only actual available capabilities.
 Never customize the shared core for this game. General improvement proposals are separate core tasks.
+Learning loop: when a core rule, packet, template, test or routing gap costs an extra round or misses
+a bug, append one row to CORE-FEEDBACK.md at the end of the current task (no game data, real evidence;
+bump evidence instead of duplicating). Do not open a separate AI turn for it.
+At a milestone start run bash scripts/core-update-check.sh; apply only relevant newer core changes
+on a separate branch and update .studio/CORE_VERSION and SOURCE_COMMIT.
 Core updates are selective; never overwrite game files from a new template.
