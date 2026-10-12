@@ -1,4 +1,4 @@
-# Oyun üretim çekirdeği — 3.2.1
+# Pardex Üretici — oyun üretim çekirdeği — 3.2.1
 Bu depo ortak çalışma kuralları, araç rehberleri ve yeni proje başlangıcıdır.
 **Oyun kodu ve oyuna özel üretim ayrı özel depoda geliştirilir.**
 Araçlar: Gemini Pro, Claude Code web, ChatGPT Pro/Codex ve Meshy Pro. Copilot kullanılmaz.
@@ -56,6 +56,6 @@ Oyun depolarına workflow kopyalanmaz; onların görünürlüğü ayrı karardı
 Godot kontrolünde Windows export varsayılan kapalıdır. Kullanıcı istediğinde açılır.
 Günlük geliştirme kontrolü AI'nın cloud ortamında, görsel/oynanış testi kullanıcının Godot'unda.
 Önceki GitHub Godot import/smoke/export ve şablon kontrolleri başarıyla doğrulandı:
-[Godot](https://github.com/SerkanAydin06/game-studio-template/actions/runs/38245824512),
-[şablon](https://github.com/SerkanAydin06/game-studio-template/actions/runs/38245824412).
+[Godot](https://github.com/SerkanAydin06/pardex-uretici/actions/runs/38245824512),
+[şablon](https://github.com/SerkanAydin06/pardex-uretici/actions/runs/38245824412).
 Bu geçmiş başarı, her yeni oyunun testinin geçtiği anlamına gelmez.

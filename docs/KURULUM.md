@@ -1,5 +1,5 @@
 # Kurulum merkezi
-Mevcut ana depo SerkanAydin06/game-studio-template'dir. Yeniden oluşturmayın.
+Mevcut ana depo SerkanAydin06/pardex-uretici'dir. Yeniden oluşturmayın.
 Bu çekirdeği her oyunun deposu olarak kullanmayın; [ayrı depo akışını](YENI-OYUN.md) izleyin.
 
 ## Hesapları bir kez bağla

@@ -11,6 +11,6 @@ Yeni sohbet geçmiş sohbeti biliyor varsayılmaz; depodaki güncel kayıtları 
 Erişim yoksa okuyormuş gibi davranma; kullanıcıdan GitHub erişimi veya bu başlangıç dosyalarını iste.
 
 Kullanıcının yeni sohbet mesajı:
-> https://github.com/SerkanAydin06/game-studio-template deposuna bağlan.
+> https://github.com/SerkanAydin06/pardex-uretici deposuna bağlan.
 > START_HERE.md talimatını uygula. Yeni oyun için gerekli bilgileri benden al;
 > süreci sen yönet, diğer yapay zekâlara taşımam gereken hazır görevleri gerektiğinde ver.
