@@ -89,6 +89,7 @@ async function loadCI(){$('ci-message').textContent='Son public CI sonuçları o
 $('run-list').replaceChildren();for(const r of runs){const li=document.createElement('li'),a=document.createElement('a');a.href=r.html_url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=r.name+' — '+(r.conclusion||r.status)+' · '+new Date(r.created_at).toLocaleString('tr-TR');li.appendChild(a);$('run-list').appendChild(li);}put('ci-message',runs.length?'Ana dal için son sonuçlar listelendi.':'Ana dalda workflow sonucu bulunamadı.');put('last-update','Güncellendi: '+new Date().toLocaleTimeString('tr-TR'));}catch(e){put('ci-message','Canlı sonuçlar alınamadı: '+e.message+'. Actions bağlantısından kontrol edebilirsiniz.');put('last-update','GitHub bağlantısı yok');}}
 
 const STORAGE_KEY='pardex.projectTracker.v1';
+let records=[];
 const ciCache=new Map();
 const CI_TTL=120000;
 async function getGameCI(repoName,force=false){
@@ -160,7 +161,6 @@ $('import-file').addEventListener('change',async()=>{const f=$('import-file').fi
 readProjects();
 
 const RECORDS_KEY='pardex.records.v1';
-let records=[];
 function recordStore(){try{localStorage.setItem(RECORDS_KEY,JSON.stringify(records));return true}catch(e){put('records-message','Yerel kayıt hatası: '+e.message);return false}}
 function readRecords(){try{const raw=JSON.parse(localStorage.getItem(RECORDS_KEY)||'[]');if(Array.isArray(raw))records=raw.filter(x=>x&&['result','usage'].includes(x.type)&&typeof x.project==='string'&&typeof x.task==='string').slice(0,1000)}catch(e){put('records-message','Kayıtlar okunamadı: '+e.message)}renderRecords()}
 function recordSelects(){for(const id of ['record-project','usage-project']){const el=$(id),old=el.value;el.replaceChildren();for(const p of projects){const opt=document.createElement('option');opt.value=p.repo;opt.textContent=p.name;el.append(opt)}if(projects.some(p=>p.repo===old))el.value=old}recordTaskSelects()}
