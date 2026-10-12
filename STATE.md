@@ -1,5 +1,5 @@
 # Current state
-Core: 3.1.0; reusable shared workflow, not a game.
+Core: 3.2.0; reusable shared workflow, not a game.
 Repo: SerkanAydin06/game-studio-template.
 Tools: Gemini Pro web, Claude Code web, ChatGPT Pro/Codex, Meshy Pro. No Copilot.
 User tests source projects in Godot on multiple PCs; no Python/AI CLI prerequisite.
@@ -16,3 +16,7 @@ User relays filled task packets; game COORDINATOR.md persists this workflow.
 Repository creation/writing uses actual available permissions with explicit manual fallback.
 Next: create a separate game repository only when user chooses the game; validate on user's Godot.
 Actual account quotas and individual service connections are not auto-verified.
+
+General improvement is allowed only through a separate core change with evidence and rollback.
+Game-specific customization stays in game repositories. Skills/agents are selected by capability,
+need and measured outcomes; no background self-update service is installed.

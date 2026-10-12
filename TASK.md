@@ -1,6 +1,6 @@
 # Active task
-Completed: define ChatGPT-led onboarding, repository capability fallback and user-relayed task packets.
-Scope: shared core and independent starter only; no actual game creation.
-Next: new-game requests enter START_HERE.md, collect missing essentials,
-initialize a separate private repository, and begin a playable milestone.
-Validation: template and starter checks; no Actions or paid asset generation.
+Completed: adaptive tool/skill/agent routing, strict core/game scope,
+controlled general improvement and production quality gates.
+Checks: template, standalone starter transfer, document links and compact state limits.
+No game-specific work, paid generation or Actions run.
+Next: START_HERE.md onboarding when the user selects a game.

@@ -5,7 +5,10 @@ No Copilot. The user tests source projects in local Godot; executable export is 
 ChatGPT is the user's single coordinator; the user relays explicit task packets to other providers.
 For a fresh chat or new-game request, read START_HERE.md, then docs/CHATGPT-YONETICI.md.
 For core maintenance, read STATE.md and TASK.md first. Read only relevant docs/files, not the entire repository.
-One primary writer per task. Do not delegate to extra agents or duplicate model reviews by default.
+One primary writer per task. Use relevant available skills and bounded agents only when useful;
+read docs/ARAC-SKILL-AGENT.md when routing requires it. No duplicate reviews by default.
+Game-specific changes never belong here. Read docs/CEKIRDEK-SINIRI.md before general self-improvement.
+General improvements use a separate core task/branch, evidence, checks and rollback; never auto-sync games.
 Use local/cloud scripts for mechanical work. Existing subscription access first; no automatic paid API fallback.
 Actions are manual only. Never dispatch Actions or request export unless the task specifically needs it.
 Do not claim token savings or balances without measurements. Quotas differ by provider.

@@ -18,4 +18,6 @@ Test changes meaningfully; headless tests do not prove graphics, performance or 
 Keep STATE <=250 and TASK <=200 words; detailed test records go in TESTS.md.
 Use a task branch; preserve unrelated work; no force push or destructive automatic merges.
 Record commit/PR, actual test outcome, blockers and next step at handoff.
+Read ROUTING.md when choosing tools/skills/agents; use only actual available capabilities.
+Never customize the shared core for this game. General improvement proposals are separate core tasks.
 Core updates are selective; never overwrite game files from a new template.

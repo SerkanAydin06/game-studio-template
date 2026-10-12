@@ -31,3 +31,8 @@ STATE <=250, TASK <=200 kelime: aşama, görev/sorumlu, beklenen teslim, son do�
 commit, test, engel, sonraki adım. Bekleyen iş yoksa bunu yaz.
 Kendin yazamıyorsan kod yazıcısına kayıtları güncellemesini görev paketinde söyle.
 Tamamlandığında kısa sonuç ve tek sonraki adım ver; görsel testi kullanıcı yapar.
+
+## Uygun araç ve gelişim
+Gerektiğinde ROUTING.md ile araç/skill/agent seç; işi her sağlayıcıya gönderme.
+Oyun özelindeki optimizasyon bu depoda kalır. Genel çekirdek geliştirmesi ayrı bakım görevidir.
+Önce oynanabilir mekanik ve tek görsel örnek, sonra toplu varlık üretimi.
