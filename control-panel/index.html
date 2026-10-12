@@ -185,7 +185,7 @@ function renderRecords(){recordSelects();const list=$('records-list');list.repla
  if(r.type==='result'&&r.link){const link=safeLink(r.link);if(link){const a=document.createElement('a');a.href=link;a.textContent='Kanıtı aç ↗';a.target='_blank';a.rel='noopener noreferrer';entry.append(a)}}
  const del=document.createElement('button');del.className='secondary';del.style.marginLeft='12px';del.textContent='Sil';del.addEventListener('click',()=>{if(confirm('Bu kaydı silmek istiyor musun?')){records=records.filter(x=>x.id!==r.id);recordStore();renderRecords();renderProjects()}});entry.append(del);list.append(entry)}
 }
-readRecords();
+readRecords();renderProjects();
 
 $('refresh').addEventListener('click',loadCI);loadCI();
 </script></body></html>
