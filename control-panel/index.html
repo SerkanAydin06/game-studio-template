@@ -17,7 +17,7 @@ button.primary{background:#4b88f1;color:white;border:0;border-radius:9px;padding
 ul{padding-left:21px}li{margin-bottom:10px}.hidden{display:none!important}.status-ok{color:#70dbb3}.status-bad{color:#ffaeac}
 @media(max-width:900px){.shell{grid-template-columns:1fr}aside{padding:16px}nav{display:flex;flex-wrap:wrap;margin-top:12px}.grid{grid-template-columns:1fr}.wide{grid-column:span 1}main{padding:20px}}
 </style></head><body><div class="shell"><aside><h1>◈ PARDEX</h1><p>CONTROL PANEL · 1.0</p><nav>
-<button class="active" data-tab="overview">Genel Bakış</button><button data-tab="new">Yeni Oyun</button><button data-tab="tasks">Görev Merkezi</button><button data-tab="checks">Testler & CI</button><button data-tab="budget">Kota & Bütçe</button></nav><p style="margin-top:40px">Yerel panel · API anahtarı gerekmez · AI otomasyonu yok</p></aside>
+<button class="active" data-tab="overview">Genel Bakış</button><button data-tab="projects">Projeler & İlerleme</button><button data-tab="new">Yeni Oyun</button><button data-tab="tasks">Görev Merkezi</button><button data-tab="checks">Testler & CI</button><button data-tab="budget">Kota & Bütçe</button></nav><p style="margin-top:40px">Yerel panel · API anahtarı gerekmez · AI otomasyonu yok</p></aside>
 <main><header><div><h2 id="heading">Genel Bakış</h2><small>Kontrollü oyun üretimi • minimum gereksiz istek</small></div><span class="pill" id="last-update">Veriler yüklenmedi</span></header>
 <section id="overview" class="grid">
 <div class="card"><small>Çekirdek</small><div class="stat">Pardex 3.3.0</div><p class="muted">Bağımsız oyun depoları</p></div>
@@ -25,6 +25,18 @@ ul{padding-left:21px}li{margin-bottom:10px}.hidden{display:none!important}.statu
 <div class="card"><small>Son Godot kontrolü</small><div class="stat" id="godot">—</div></div>
 <div class="card wide"><h3>Üretim akışı</h3><ol><li>Yeni oyun tanımını oluştur</li><li>GitHub'da ayrı public oyun deposu aç</li><li>ChatGPT'ye oyun tanımını ve depo adresini ilet</li><li>Görev başına tek kod yazıcısı seç</li><li>CI sonucunu doğrula; oynanışı Godot F5 ile test et</li></ol><div class="actions"><button class="primary" data-go="new">Yeni oyun başlat</button><button class="secondary" data-go="tasks">Görev oluştur</button></div></div>
 <div class="card"><h3>Kısayollar</h3><p><a href="https://github.com/SerkanAydin06/pardex-uretici" target="_blank" rel="noopener noreferrer">Çekirdek deposu ↗</a></p><p><a href="https://github.com/SerkanAydin06/pardex-uretici/actions" target="_blank" rel="noopener noreferrer">GitHub Actions ↗</a></p><p><a href="https://github.com/SerkanAydin06/pardex-uretici/blob/main/START_HERE.md">Başlangıç rehberi</a></p><small>Son kontrol sonuçları GitHub'ın herkese açık API'sinden okunur.</small></div>
+</section>
+<section id="projects" class="grid hidden">
+<div class="card wide"><h3>Projelerim</h3><p class="muted">Projeler ve görevleri yalnız bu tarayıcıda saklanır. GitHub ile otomatik eşitlenmez.</p>
+<label for="project-name">Proje adı</label><input id="project-name" maxlength="100" placeholder="Örn. Yeni korsan oyunu">
+<label for="project-repo">GitHub deposu (owner/repo)</label><input id="project-repo" placeholder="hesap/oyun-adi">
+<div class="actions"><button class="primary" id="add-project">Projeyi kaydet</button><button class="secondary" id="export-data">Yedeği indir (JSON)</button><button class="secondary" id="import-data">Yedeği geri yükle</button><input class="hidden" type="file" id="import-file" accept="application/json,.json"></div>
+<p id="project-message" aria-live="polite"></p></div>
+<div class="card"><h3>Görev ekle</h3><label for="project-select">Proje</label><select id="project-select"></select>
+<label for="tracked-title">Görev adı</label><input id="tracked-title" maxlength="160">
+<label for="tracked-owner">Sorumlu</label><select id="tracked-owner"><option>ChatGPT / Codex</option><option>Claude Code web</option><option>Gemini</option><option>Meshy</option><option>Kullanıcı</option></select>
+<div class="actions"><button class="primary" id="add-tracked-task">Görev ekle</button></div></div>
+<div class="card full"><h3>Proje ve görev listesi</h3><div id="projects-list"></div></div>
 </section>
 <section id="new" class="grid hidden"><div class="card wide"><h3>Oyun tanımı</h3>
 <label for="game-name">Oyun adı</label><input id="game-name" maxlength="100" placeholder="Örn. Korsanların Hazinesi">
@@ -45,7 +57,7 @@ ul{padding-left:21px}li{margin-bottom:10px}.hidden{display:none!important}.statu
 'use strict';
 const repo='SerkanAydin06/pardex-uretici';
 const $=id=>document.getElementById(id);
-const headings={overview:'Genel Bakış',new:'Yeni Oyun',tasks:'Görev Merkezi',checks:'Testler & CI',budget:'Kota & Bütçe'};
+const headings={projects:'Projeler & İlerleme',overview:'Genel Bakış',new:'Yeni Oyun',tasks:'Görev Merkezi',checks:'Testler & CI',budget:'Kota & Bütçe'};
 function tab(id){for(const s of document.querySelectorAll('main section'))s.classList.toggle('hidden',s.id!==id);for(const b of document.querySelectorAll('nav button'))b.classList.toggle('active',b.dataset.tab===id);$('heading').textContent=headings[id];}
 document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>tab(b.dataset.tab)));
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>tab(b.dataset.go)));
@@ -58,5 +70,36 @@ $('make-brief').addEventListener('click',()=>{const name=$('game-name').value.tr
 $('make-task').addEventListener('click',()=>{const r=validRepo($('task-repo').value.trim()),title=$('task-title').value.trim(),details=$('task-details').value.trim();if(!r||!title||!details){alert('Geçerli depo, görev ve kabul ölçütlerini girin.');return}put('task-text',`Pardex görev paketi\nAraç: ${$('task-tool').value}\nDepo: https://github.com/${r}\nAmaç: ${title}\nKapsam ve kabul ölçütleri: ${details}\nÖnce AGENTS.md, STATE.md, TASK.md ve yalnız ilgili dosyaları oku. Son main commitini doğrula; varsa devam eden işi tekrarlama. Gereksiz AI çağrısı, ücretli API ve tekrar CI başlatma yok. Yalnız bu işe ait dosyaları değiştir; uygun testleri çalıştır. Sonuçta commit/PR bağlantısı, değişen dosyalar, test kanıtı, engel ve sonraki adımı bildir; STATE/TASK/TESTS kayıtlarını güncelle.`);$('task-output').classList.remove('hidden');});
 async function loadCI(){$('ci-message').textContent='Son public CI sonuçları okunuyor…';try{const res=await fetch('https://api.github.com/repos/'+repo+'/actions/runs?per_page=30',{headers:{Accept:'application/vnd.github+json'}});if(!res.ok)throw Error('GitHub API: HTTP '+res.status);const data=await res.json();const names=['Studio template checks','Godot validation'];const runs=names.map(n=>data.workflow_runs.find(r=>r.name===n&&r.head_branch==='main')).filter(Boolean);for(const [id,name] of [['studio',names[0]],['godot',names[1]]]){const run=runs.find(r=>r.name===name);put(id,run?run.status==='completed'?(run.conclusion==='success'?'Başarılı':run.conclusion||'Bilinmiyor'):'Çalışıyor':'Bulunamadı');}
 $('run-list').replaceChildren();for(const r of runs){const li=document.createElement('li'),a=document.createElement('a');a.href=r.html_url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=r.name+' — '+(r.conclusion||r.status)+' · '+new Date(r.created_at).toLocaleString('tr-TR');li.appendChild(a);$('run-list').appendChild(li);}put('ci-message',runs.length?'Ana dal için son sonuçlar listelendi.':'Ana dalda workflow sonucu bulunamadı.');put('last-update','Güncellendi: '+new Date().toLocaleTimeString('tr-TR'));}catch(e){put('ci-message','Canlı sonuçlar alınamadı: '+e.message+'. Actions bağlantısından kontrol edebilirsiniz.');put('last-update','GitHub bağlantısı yok');}}
+
+const STORAGE_KEY='pardex.projectTracker.v1';
+let projects=[];
+function saveProjects(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(projects));put('project-message','Yerel kayıt güncellendi.');return true}catch(e){put('project-message','Kaydedilemedi: '+e.message);return false}}
+function readProjects(){try{const value=localStorage.getItem(STORAGE_KEY);if(value)projects=validateBackup(JSON.parse(value));}catch(e){put('project-message','Yerel kayıt okunamadı: '+e.message);projects=[]}renderProjects()}
+function validateBackup(data){if(!Array.isArray(data)||data.length>100)throw Error('Proje listesi geçersiz veya çok büyük.');
+return data.map(p=>{if(!p||typeof p.name!=='string'||!p.name.trim()||p.name.length>100||typeof p.repo!=='string'||!validRepo(p.repo)||!Array.isArray(p.tasks)||p.tasks.length>500)throw Error('Proje verisi geçersiz.');
+return {id:String(p.id||'').slice(0,100)||crypto.randomUUID(),name:p.name,repo:validRepo(p.repo),tasks:p.tasks.map(t=>{if(!t||typeof t.title!=='string'||!t.title.trim()||t.title.length>160||!['Bekliyor','Devam ediyor','Test ediliyor','Tamamlandı'].includes(t.status)||typeof t.owner!=='string'||t.owner.length>80)throw Error('Görev verisi geçersiz.');return {id:String(t.id||'').slice(0,100)||crypto.randomUUID(),title:t.title,owner:t.owner,status:t.status}})}})}
+function renderProjects(){
+const select=$('project-select'),list=$('projects-list');select.replaceChildren();list.replaceChildren();
+for(const p of projects){const opt=document.createElement('option');opt.value=p.id;opt.textContent=p.name;select.append(opt);
+const div=document.createElement('div');div.className='card';div.style.marginBottom='12px';
+const h=document.createElement('h3');h.textContent=p.name;div.append(h);
+const a=document.createElement('a');a.href='https://github.com/'+p.repo;a.target='_blank';a.rel='noopener noreferrer';a.textContent=p.repo+' ↗';div.append(a);
+const count=document.createElement('p');count.className='muted';count.textContent=p.tasks.filter(t=>t.status==='Tamamlandı').length+' / '+p.tasks.length+' görev tamamlandı';div.append(count);
+const remove=document.createElement('button');remove.className='secondary';remove.textContent='Projeyi sil';remove.addEventListener('click',()=>{if(confirm(p.name+' ve tüm yerel görevleri silinsin mi?')){projects=projects.filter(x=>x.id!==p.id);saveProjects();renderProjects()}});div.append(remove);
+for(const task of p.tasks){const row=document.createElement('div');row.className='actions';row.style.alignItems='center';row.style.padding='7px 0';const label=document.createElement('span');label.style.flex='1';label.textContent=task.title+' · '+task.owner;
+const state=document.createElement('select');state.style.width='auto';for(const s of ['Bekliyor','Devam ediyor','Test ediliyor','Tamamlandı']){const option=document.createElement('option');option.textContent=s;option.value=s;state.append(option)}state.value=task.status;state.setAttribute('aria-label',task.title+' durumu');state.addEventListener('change',()=>{task.status=state.value;saveProjects();renderProjects()});
+const del=document.createElement('button');del.className='secondary';del.textContent='Sil';del.setAttribute('aria-label',task.title+' görevini sil');del.addEventListener('click',()=>{if(confirm('Görev silinsin mi?')){p.tasks=p.tasks.filter(t=>t.id!==task.id);saveProjects();renderProjects()}});
+row.append(label,state,del);div.append(row)}list.append(div)}
+if(!projects.length){const empty=document.createElement('p');empty.className='muted';empty.textContent='Henüz kayıtlı proje yok. İlk projeni yukarıdan ekle.';list.append(empty)}
+}
+$('add-project').addEventListener('click',()=>{const name=$('project-name').value.trim(),repo=validRepo($('project-repo').value.trim());if(!name||!repo){put('project-message','Proje adı ve geçerli GitHub deposu gerekli.');return}if(projects.length>=100){put('project-message','En fazla 100 proje kaydedilebilir.');return}
+if(projects.some(p=>p.repo.toLowerCase()===repo.toLowerCase())){put('project-message','Bu depo zaten ekli.');return}
+projects.push({id:crypto.randomUUID(),name,repo,tasks:[]});if(saveProjects()){renderProjects();$('project-name').value='';$('project-repo').value='';}});
+$('add-tracked-task').addEventListener('click',()=>{const p=projects.find(x=>x.id===$('project-select').value),title=$('tracked-title').value.trim();if(!p||!title||p.tasks.length>=500){put('project-message','Proje seç, görev adı gir (en fazla 500 görev).');return}p.tasks.push({id:crypto.randomUUID(),title,owner:$('tracked-owner').value,status:'Bekliyor'});if(saveProjects()){$('tracked-title').value='';renderProjects()}});
+$('export-data').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(projects,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='pardex-projeler.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+$('import-data').addEventListener('click',()=>$('import-file').click());
+$('import-file').addEventListener('change',async()=>{const f=$('import-file').files[0];if(!f)return;try{if(f.size>2000000)throw Error('Yedek 2 MB sınırını aşıyor.');const loaded=validateBackup(JSON.parse(await f.text()));if(!confirm('Mevcut tarayıcı projeleri yedek içeriğiyle değiştirilsin mi?'))return;const previous=projects;projects=loaded;if(!saveProjects()){projects=previous;return}renderProjects()}catch(e){put('project-message','İçe aktarma başarısız: '+e.message)}finally{$('import-file').value=''}});
+readProjects();
+
 $('refresh').addEventListener('click',loadCI);loadCI();
 </script></body></html>
