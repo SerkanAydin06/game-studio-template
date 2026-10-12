@@ -116,6 +116,29 @@ async function updateCoreInfo(repoName,target){const core=$('core-version').text
  try{const v=(await cachedText(raw+'.studio/CORE_VERSION',600000)).trim();text=/^[0-9.]+$/.test(v)?('Çekirdek: '+v+(versionNewer(core,v)?' → '+core+' güncellemesi var (scripts/core-update-check.sh)':' (güncel)')):'Çekirdek sürümü okunamadı'}catch{text='Çekirdek sürümü okunamadı'}
  try{const fb=await cachedText(raw+'CORE-FEEDBACK.md',600000);const open=fb.split('\n').filter(l=>{const c=l.split('|');return l.startsWith('|')&&c.length>=9&&c[c.length-2].trim().toLowerCase()==='acik'}).length;text+=' · Açık çekirdek önerisi: '+open}catch{}
  if(target.isConnected)target.textContent=text}
+const CLOSING_REF=/\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s+#(\d+)/gi;
+function ghLink(url,text){const a=document.createElement('a');const safe=safeLink(url);if(safe){a.href=safe;a.target='_blank';a.rel='noopener noreferrer'}a.textContent=text;return a}
+async function showGitHubTasks(repoName,target,force=false){
+ target.replaceChildren();const info=document.createElement('p');info.className='muted';info.textContent='GitHub Issues / PR okunuyor…';target.append(info);
+ try{
+  const base='https://api.github.com/repos/'+repoName;
+  const [issueData,prData]=await Promise.all([cachedJSON(base+'/issues?state=all&per_page=50',600000,force),cachedJSON(base+'/pulls?state=all&per_page=50',600000,force)]);
+  const issues=(Array.isArray(issueData)?issueData:[]).filter(i=>i&&!i.pull_request);
+  const pulls=Array.isArray(prData)?prData:[];
+  const closedBy=new Map();
+  for(const pr of pulls){for(const m of String(pr.body||'').matchAll(CLOSING_REF)){const n=Number(m[1]);if(!closedBy.has(n))closedBy.set(n,pr)}}
+  if(!target.isConnected)return;target.replaceChildren();
+  const openIssues=issues.filter(i=>i.state==='open'),merged=pulls.filter(pr=>pr.merged_at),openPrs=pulls.filter(pr=>pr.state==='open');
+  const summary=document.createElement('p');summary.className='muted';
+  summary.textContent='Issue: '+openIssues.length+' açık / '+(issues.length-openIssues.length)+' kapalı · PR: '+openPrs.length+' açık / '+merged.length+' birleşti / '+(pulls.length-openPrs.length-merged.length)+' kapalı (son 50 kayıt)';
+  target.append(summary);
+  const section=(title,items,line)=>{if(!items.length)return;const h=document.createElement('strong');h.textContent=title;target.append(h);const ul=document.createElement('ul');for(const it of items.slice(0,10)){const li=document.createElement('li');line(li,it);ul.append(li)}target.append(ul)};
+  section('Açık Issue\'lar',openIssues,(li,i)=>{li.append(ghLink(i.html_url,'#'+i.number+' '+String(i.title||'').slice(0,120)));const pr=closedBy.get(i.number);if(pr){const s=document.createElement('span');s.className='muted';s.textContent=' ← PR #'+pr.number+(pr.merged_at?' birleşti (issue hâlâ açık)':pr.state==='open'?' bunu kapatacak':' kapandı, birleşmedi');li.append(s)}});
+  section('Son PR\'lar',pulls,(li,pr)=>{li.append(ghLink(pr.html_url,'#'+pr.number+' '+String(pr.title||'').slice(0,120)));const refs=[...String(pr.body||'').matchAll(CLOSING_REF)].map(m=>'#'+m[1]);const s=document.createElement('span');s.className='muted';s.textContent=' · '+(pr.merged_at?'Birleşti':pr.state==='open'?(pr.draft?'Taslak':'Açık'):'Kapandı')+(refs.length?' · kapatır: '+[...new Set(refs)].join(', '):'');li.append(s)});
+  if(!issues.length&&!pulls.length){const e=document.createElement('p');e.className='muted';e.textContent='Bu depoda Issue veya PR yok.';target.append(e)}
+  const refresh=document.createElement('button');refresh.className='secondary';refresh.textContent='Issue / PR yenile';refresh.addEventListener('click',()=>showGitHubTasks(repoName,target,true));target.append(refresh);
+ }catch(error){if(target.isConnected){target.replaceChildren();const e=document.createElement('p');e.className='muted';e.textContent='Issue / PR okunamadı: '+error.message;target.append(e)}}
+}
 const CACHE_PREFIX='pardex.cache.v1:';
 async function cachedJSON(url,ttl,force=false){const key=CACHE_PREFIX+url;if(!force){try{const c=JSON.parse(sessionStorage.getItem(key)||'null');if(c&&Date.now()-c.at<ttl)return c.data}catch{}}const res=await fetch(url,{headers:{Accept:'application/vnd.github+json'}});if(!res.ok)throw Error(res.status===404?'Depo bulunamadı veya erişilemiyor':res.status===403||res.status===429?'GitHub API sınırı / erişim engeli':'HTTP '+res.status);const data=await res.json();try{sessionStorage.setItem(key,JSON.stringify({at:Date.now(),data}))}catch{}return data}
 const CORE_WORKFLOWS=[['studio','studio-checks.yml','Studio template checks'],['godot','godot-validation.yml','Godot validation'],[null,'pages-control-panel.yml','Publish Pardex Control Panel']];
@@ -171,7 +194,7 @@ ciButton.addEventListener('click',()=>updateGameCI(p.repo,ciArea,true));
 const coreInfo=document.createElement('p');coreInfo.className='muted';coreInfo.textContent='Çekirdek sürümü okunuyor…';div.append(coreInfo,ciArea,ciButton);updateGameCI(p.repo,ciArea);updateCoreInfo(p.repo,coreInfo);
 const tracker=document.createElement('div');tracker.className='github-task-tracker';tracker.style.marginTop='14px';
 const trackerButton=document.createElement('button');trackerButton.className='secondary';trackerButton.textContent='GitHub Issues / PR görevlerini getir';
-trackerButton.addEventListener('click',()=>showGitHubTasks(p.repo,tracker,true));
+trackerButton.addEventListener('click',()=>showGitHubTasks(p.repo,tracker,false));
 div.append(trackerButton,tracker);
 const remove=document.createElement('button');remove.className='secondary';remove.textContent='Projeyi sil';remove.addEventListener('click',()=>{const own=records.filter(r=>r.project===p.repo).length;if(confirm(p.name+' ve tüm yerel görevleri'+(own?' ile '+own+' sonuç/kullanım kaydı':'')+' silinsin mi?')){projects=projects.filter(x=>x.id!==p.id);records=records.filter(r=>r.project!==p.repo);saveProjects();recordStore();renderRecords();renderProjects()}});div.append(remove);
 for(const task of p.tasks){const row=document.createElement('div');row.className='actions';row.style.alignItems='center';row.style.padding='7px 0';const label=document.createElement('span');label.style.flex='1';label.textContent=task.title+' · '+task.owner;
