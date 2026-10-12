@@ -1,22 +1,20 @@
-# Shared working rules
-Use this repository as the source of truth. Start with STATE.md and TASK.md.
-One main coding agent per task; do not start agent teams by default.
-Search for relevant files first; avoid reading the whole repository and full logs.
-Use scripts and existing tests for mechanical work. Do not ask another model to repeat it.
-Do not start paid API automation, background polling or asset generation without user authorization.
-Use subscription-based web sessions. These rules do not enforce provider spending limits.
-Keep STATE.md under 250 words and TASK.md under 200 words. Update them at meaningful handoffs.
-Do not hide blockers to meet length limits; put detailed evidence in a referenced task-specific file.
-Do not load binary assets or generated folders unless the task requires inspection.
-For a routine task, use the default appropriate model/effort. Escalate only for a concrete problem.
-After two failed attempts at the same error, stop blind retries, inspect evidence and revise the approach.
-Use a separate task branch; preserve other changes and inspect the diff before committing.
-Never force-push or merge conflicting edits automatically. Observe existing repository rules.
-Do not enable automatic repeated AI review/fix loops by default.
-For material changes, run relevant available checks; record exact outcomes and omissions.
-A successful import is not proof of gameplay, visuals, performance or a Windows build.
-Do not claim tests passed if the cloud environment lacks Godot or other required dependencies.
-At handoff, record branch, work done, actual tests, blockers and one next action in STATE.md.
-Commit the task files and provide a PR/branch reference when supported. Never claim an unmerged
-branch is in main. Follow the user's authorization and repository policy for merging.
-Keep responses concise. Report result, validation and the next necessary step.
+# Core operating rules
+This is the shared production CORE, not a game repository. Never put game-specific mechanics here.
+Available user subscriptions: Gemini Pro web, Claude Code web, ChatGPT Pro/Codex, Meshy Pro.
+No Copilot. The user tests source projects in local Godot; executable export is exceptional.
+Read STATE.md and TASK.md first. Read only relevant docs/files, not the entire repository.
+One primary writer per task. Do not delegate to extra agents or duplicate model reviews by default.
+Use local/cloud scripts for mechanical work. Existing subscription access first; no automatic paid API fallback.
+Actions are manual only. Never dispatch Actions or request export unless the task specifically needs it.
+Do not claim token savings or balances without measurements. Quotas differ by provider.
+Prefer a suitable standard model/effort; escalate only for a concrete blocker or risky architecture.
+After two failed fixes of the same issue, inspect evidence and change the approach rather than loop.
+Preserve task context during related work; use a concise handoff for unrelated tasks.
+Do not load binaries, generated folders, secrets or whole logs unless necessary.
+STATE.md <=250 words, TASK.md <=200 words; keep detailed evidence in a referenced file.
+Do not generate assets while configuring the core. Reuse existing assets before new paid generation.
+Run relevant checks once; repeat only after changes or a concrete risk. Never invent a pass.
+Use a task branch, inspect diffs, preserve unrelated work, no force push or destructive conflict fixes.
+Follow current user authorization for changes and merges. Do not repeatedly request approved routine actions.
+At handoff record result, actual tests, blockers, branch/PR and next action.
+Game repositories receive a versioned small starter via scripts/new-game.sh; no automatic core sync.

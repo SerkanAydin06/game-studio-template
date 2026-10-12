@@ -1,7 +1,7 @@
 # Active task
-Goal: validate and enable low-consumption Actions infrastructure.
-Scope: shared guides and template checks, pinned Godot installer, empty validation scene,
-smoke test and Windows export. User authorized Actions after upgrading to GitHub Pro.
-Acceptance: checks pass; workflows merged to main; GitHub run evidence recorded.
-Keep actual Windows runtime/visual validation separate from Linux export success.
-No gameplay, asset generation or paid AI API integration.
+Goal: audit shared core for maximum useful output with minimum quota/credit use.
+Scope: clear core/game separation; four web-tool guides; targeted checks; manual Actions;
+optional export; independent versioned game starter; Godot source workflow across PCs.
+Acceptance: core checks, new-project isolation and overwrite refusal, Godot import/smoke,
+manual-only workflow structure and no workflow copied into games.
+No actual game development or paid asset generation.

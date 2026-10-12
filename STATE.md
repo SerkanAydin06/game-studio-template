@@ -1,13 +1,15 @@
 # Current state
-Goal: reusable browser-first game workflow; no gameplay.
+Core: 3.0.0; reusable shared workflow, not a game.
 Repo: SerkanAydin06/game-studio-template.
-User uses Claude Code web, ChatGPT/Codex, Gemini web and Meshy web on different PCs.
-User reported exhausted Actions quota, then GitHub Pro upgrade and authorized Actions use.
-Actual remaining account quota is not independently visible here.
-Branch: codex/web-guides-manual-checks; check PR status before assuming main contains it.
-Prepared: four tool guides; automatic path-filtered template checks; Godot 4.5.1 import/smoke
-and Windows x86_64 export workflow; one-day artifact; no AI/API calls or cron.
-validation/ is an infrastructure fixture, not a game.
-Validation: local shell/YAML checks passed; downloaded engine SHA-256 verified;
-real Godot 4.5.1 headless import and scene smoke test passed. GitHub/export result still pending.
-Remaining: successful Actions run, Windows executable opened on a real PC, individual AI connections.
+Tools: Gemini Pro web, Claude Code web, ChatGPT Pro/Codex, Meshy Pro. No Copilot.
+User tests source projects in Godot on multiple PCs; no Python/AI CLI prerequisite.
+Policy: one primary writer, short task context, local/cloud checks, manual-only Actions,
+Windows export off by default, no automatic paid API/asset generation.
+Architecture: core docs/scripts + separate game starter; games have independent private repos
+and versioned core snapshots, not automatic overwrites.
+Historical GitHub engine/import/smoke/export and template checks passed on commit 24dd728.
+Validated v3 locally: manual-only YAML, template checks, separate starter and provenance,
+overwrite/nested/dirty-core refusal, real engine import/smoke in core and generated game.
+Details: docs/DOGRULAMA.md. Actions not run for v3; user-PC checks still pending.
+Next: create a separate game repository only when user chooses the game; validate on user's Godot.
+Actual account quotas and individual service connections are not auto-verified.

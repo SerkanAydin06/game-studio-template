@@ -24,3 +24,9 @@ Karakterde tek uygun iskelet ve yeniden kullanılabilir animasyon planını üre
 Lisans koşullarını üretimin yapıldığı plan ve tarihle birlikte kaydet.
 
 Kaynak: https://docs.meshy.ai/en/webapp/getting-started
+
+## Çekirdek / oyun ayrımı ve kota
+Bu depo ortak çekirdektir. Gerçek oyun görevi için ayrı oyun deposunu ve doğru dalı kullan.
+Yalnız ilgili dosyaları yükle; bütün rehberleri her sohbete ekleme. Copilot kullanılmaz.
+Günlük deneme kaynak projeyle Godot'ta F5; Actions ve exe üretimi otomatik başlatılmaz.
+Ortak kurallar: [verimlilik](VERIMLILIK.md), [görev devri](GOREV-AKISI.md).
