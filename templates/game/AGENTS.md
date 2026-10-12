@@ -2,7 +2,9 @@
 This is an independent game repository. Shared core provenance is in .studio/.
 Read STATE.md and TASK.md first; read PROJECT.md/BUDGET.md only when relevant.
 The user develops with web AI tools and tests sources in local Godot (F5).
-One main writer per task. Claude Code is the default; Codex/Gemini only when useful.
+ChatGPT is the single coordinator; read COORDINATOR.md for routing and handoff.
+One writer per task: finish small work here; route substantial coding to Claude when useful.
+The user relays ready prompts/results; do not assume cross-provider automation.
 Do not repeat the same work across models. Read targeted files; avoid whole-repo/context dumps.
 Use a suitable standard model/effort; escalate for concrete risk or blockers.
 After two failed fixes of the same error, inspect evidence and change the method.

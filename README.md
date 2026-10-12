@@ -1,8 +1,14 @@
-# Oyun üretim çekirdeği — 3.0.0
+# Oyun üretim çekirdeği — 3.1.0
 Bu depo ortak çalışma kuralları, araç rehberleri ve yeni proje başlangıcıdır.
 **Oyun kodu ve oyuna özel üretim ayrı özel depoda geliştirilir.**
 Araçlar: Gemini Pro, Claude Code web, ChatGPT Pro/Codex ve Meshy Pro. Copilot kullanılmaz.
 Kullanıcı bilgisayarında Python veya yerel AI CLI gerekmez. Normal deneme Godot'ta F5 ile yapılır.
+
+## Yeni sohbetten başlat
+ChatGPT'ye depo bağlantısını verip “Bu depoya bağlan; START_HERE.md talimatıyla yeni oyun sürecini başlat” yaz.
+ChatGPT kısa oyun tarifini alır, yetkisi varsa ayrı özel depoyu açar; yoksa senden açıp bağlantısını vermeni ister.
+Süreci ChatGPT yönetir. Diğer araçlara yalnız gereken hazır görev metnini taşırsın.
+[Kısa başlangıç](START_HERE.md) · [Yönetici akışı](docs/CHATGPT-YONETICI.md)
 
 ## Nereden başlayacağız?
 - [Kurulum ve hesaplar](docs/KURULUM.md)
@@ -16,8 +22,8 @@ Kullanıcı bilgisayarında Python veya yerel AI CLI gerekmez. Normal deneme God
 ## Dört aracın rolü
 | Araç | Kullanım |
 |---|---|
-| Claude Code web | Bir görevde ana kod geliştirici ve ilgili testler |
-| ChatGPT Pro / Codex | Plan, zor sorun, önemli değişiklik incelemesi veya devralma |
+| Claude Code web | ChatGPT'nin hazırladığı sınırlı kod görevi ve ilgili testler |
+| ChatGPT Pro / Codex | Tek koordinatör: ihtiyaç toplama, depo kurulumu, görev seçimi, sonuç kabulü; uygunsa doğrudan uygulama |
 | Gemini Pro web | Gerektiğinde araştırma ve görsel değerlendirme |
 | Meshy Pro web | Önceden tanımlanan, tekrar kullanılabilir 3D varlık |
 

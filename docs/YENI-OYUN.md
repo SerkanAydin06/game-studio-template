@@ -1,5 +1,6 @@
 # Çekirdekten ayrı oyun deposu
 Ana çekirdek ortak yöntemleri barındırır; oyun mekaniği, UI, görsel ve kayıt dosyaları burada tutulmaz.
+ChatGPT koordinatör akışı: [CHATGPT-YONETICI.md](CHATGPT-YONETICI.md).
 Yeni oyun istendiğinde adını ve hedef özel depoyu belirleyin. Mevcut depoya körlemesine kopyalamayın.
 
 ## Önerilen oluşturma — AI'nın cloud ortamında
@@ -8,13 +9,15 @@ Yeni oyun istendiğinde adını ve hedef özel depoyu belirleyin. Mevcut depoya 
 3. Betik yalnız olmayan hedef klasöre yazar; mevcut dosyaları/depoyu değiştirmez.
 4. Oluşan dosyalar bağımsız oyun deposuna ilk commit olarak gönderilir.
    Betik repo/hesap oluşturmaz, ağ çağrısı yapmaz veya push etmez.
-   Hedef yeni depo yoksa GitHub webden özel boş depo açılır; erişim ana geliştiriciye verilir.
+   Hedef yoksa koordinatör mevcut oluşturma yetkisiyle özel depo açar;
+   yetkisi yoksa kullanıcıdan özel boş depo açıp bağlantısını vermesini ister.
+   Yazma/ilk commit yetkisi yoksa kurulumu hazır görev paketiyle Claude Code'a devreder.
 5. Ana geliştirici yalnız oyun deposunu seçer. Tam çekirdek rehberleri otomatik yüklenmez.
 6. PROJECT.md ve BUDGET.md oyun kararı verildiğinde doldurulur. Başlangıç sahnesi yalnız boş iskelettir.
 
 ## Aktarılan küçük paket
 AGENTS.md, CLAUDE.md, STATE.md, TASK.md, PROJECT.md, BUDGET.md, ASSETS.csv, USAGE.csv,
-TESTS.md, .godot-version, .godot-project, .gitignore, .gitattributes, game/, scripts/ ve
+TESTS.md, COORDINATOR.md, .godot-version, .godot-project, .gitignore, .gitattributes, game/, scripts/ ve
 .studio/CORE_VERSION, SOURCE_COMMIT, SOURCE_REPOSITORY.
 GitHub Actions workflow'u kopyalanmaz. Yeni oyunda da otomatik dakika tüketimi sıfırdır.
 Game-root README Godot'ta açılacak yolu gösterir.

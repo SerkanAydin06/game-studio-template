@@ -2,7 +2,9 @@
 This is the shared production CORE, not a game repository. Never put game-specific mechanics here.
 Available user subscriptions: Gemini Pro web, Claude Code web, ChatGPT Pro/Codex, Meshy Pro.
 No Copilot. The user tests source projects in local Godot; executable export is exceptional.
-Read STATE.md and TASK.md first. Read only relevant docs/files, not the entire repository.
+ChatGPT is the user's single coordinator; the user relays explicit task packets to other providers.
+For a fresh chat or new-game request, read START_HERE.md, then docs/CHATGPT-YONETICI.md.
+For core maintenance, read STATE.md and TASK.md first. Read only relevant docs/files, not the entire repository.
 One primary writer per task. Do not delegate to extra agents or duplicate model reviews by default.
 Use local/cloud scripts for mechanical work. Existing subscription access first; no automatic paid API fallback.
 Actions are manual only. Never dispatch Actions or request export unless the task specifically needs it.

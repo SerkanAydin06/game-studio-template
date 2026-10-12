@@ -1,6 +1,9 @@
 # ChatGPT / Codex web
 ## Bu projede rol
-Teknik kararlar ve önemli değişikliklerin incelemesi. Claude ile aynı dosyaları aynı anda yazma.
+Tek koordinatör: yeni oyun bilgilerini alır, yetkisine göre depoyu kurar,
+gerekli araç için hazır görev verir, sonucu kabul eder ve oyun durumunu kaydeder.
+Yeni sohbet: [START_HERE.md](../START_HERE.md); ayrıntı: [yönetici akışı](CHATGPT-YONETICI.md).
+Küçük işi mevcut yetkilerinle tamamla; Claude ile aynı dosyaları aynı anda yazma.
 Normal sohbetin dosya hakkında yanıt vermesi, GitHub'a değişiklik uygulandığı anlamına gelmez.
 
 ## Bir kez bağlantı
@@ -21,7 +24,7 @@ Tüm projeyi yeniden tasarlama. Test çalıştıramazsan açıkça belirt.”
 
 ## Devir
 Claude'dan gelen PR veya commit, kısa test sonucu ve tek inceleme amacı yeterli.
-İnceleme sonucunu ana geliştiriciye aktar; uygulama sorumlusu tek araç olsun.
+Koordinatör olarak sonucu kaydet ve tek sonraki adımı seç; uygulama sorumlusu tek araç olsun.
 Yeni PC'de aynı hesaba ve ortama dön. API anahtarı bu kullanım için paket gereksinimi değildir.
 Bu depoya mevcut sohbetten erişim doğrulandı; kullanıcının ayrı Codex ortamı kurulmuş sayılmaz.
 
