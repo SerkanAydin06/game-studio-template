@@ -30,7 +30,7 @@ yeteneklerini kontrol et. Bir aboneliğin varlığı bu yetkilerin verildiği an
 - Yazma/çalıştırma varsa: docs/YENI-OYUN.md eşlemesiyle başlangıcı kur.
   Script olmayan ortamda dosya API'siyle aynı paketi aktar.
   Boş deponun ilk commit desteğini de kontrol et; yalnız var olan dala commit yeteneği yeterli değildir.
-- ChatGPT yazamıyor veya ilk commit atamıyorsa: kurulum için Claude Code'a
+- ChatGPT yazamıyor veya ilk commit atamıyorsa: kurulum için önce doğrulanmış Codex ortamına, yalnız uygun değilse Claude Code'a
   tam hazır görev paketi ver. İki araca aynı kurulumu yaptırma.
 - İkisinin de erişimi yoksa en kısa eksik erişim adımını bildir; uygulanmış gibi raporlama.
 
@@ -47,9 +47,7 @@ Kurulumdan sonra oyun deposu çalışma merkezidir; tüm çekirdeği her tur yen
 
 ## 3. Görevi kime vereceğiz?
 Aşamaya göre varsayılan ve yedek araç: [GOREV-DAGILIMI.md](GOREV-DAGILIMI.md). Özet:
-ChatGPT planlar, paket yazar ve kabul eder; kodu kendisi yalnız küçük tek dosya işinde yazar.
-Kod + test Claude Code'a (yedek Codex), görsel stil/2D referans Gemini'ye, yalnız CC0 karşılığı
-olmayan 3D varlık Meshy'ye gider. Hata düzeltmeyi kodu yazan oturum yapar.
+ChatGPT planlar, küçük kod işini mevcut yazma ve test yetkisiyle uygular, kabul eder. Orta kod + test görevi doğrulanmış Codex ortamına gider. Claude Code yalnız zor mimari, tekrar eden karmaşık hata veya kritik son inceleme için kullanılır. Görsel stil/2D referans Gemini'ye, yalnız CC0 karşılığı olmayan 3D varlık Meshy'ye gider. Hata düzeltmeyi kodu yazan oturum yapar.
 Bir görevde tek yazıcı; ilgili küçük işleri tek oynanabilir sonuçta birleştir.
 Varsayılan ikinci inceleme yok: yeşil CI + PR özeti + riskli dosya diff'i kabul için yeterli.
 Kota dolunca kısa durum kaydı bırak ve tablodaki yedeğe tek aktarım yap.
