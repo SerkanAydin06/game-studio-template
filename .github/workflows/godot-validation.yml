@@ -1,0 +1,35 @@
+name: Godot validation and Windows build
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.godot-version'
+      - 'validation/**'
+      - 'scripts/godot-*.sh'
+      - '.github/workflows/godot-validation.yml'
+permissions:
+  contents: read
+concurrency:
+  group: godot-validation-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Install pinned Godot and Windows template
+        run: bash scripts/godot-install.sh --templates
+      - name: Import, smoke test and export
+        run: bash scripts/godot-check.sh --export
+      - name: Downloadable Windows check
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: studio-windows-check
+          path: builds/windows/
+          retention-days: 1
+          if-no-files-found: error

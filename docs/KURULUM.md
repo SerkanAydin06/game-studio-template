@@ -22,5 +22,6 @@ için dal/PR bağlantısını koruyun. Godot veya oyun paketi sadece oynama test
 
 ## Durum
 GitHub dosyaları doğrulandı. Diğer servislerdeki kişisel bağlantılar bu sohbetten kurulmuş sayılmaz.
-Actions workflow yalnız elle tetiklenen şablon kontrolüdür. Godot testi, Windows export ve
-gerçek PC testi henüz yoktur. Hesaptaki Actions kotası açıklığa kavuşmadan çalışma tetiklenmeyecek.
+Kullanıcı GitHub Pro'ya geçip Actions kullanımını onayladı. Şablon kontrolü ve Godot/Windows
+export iş akışları eklendi. Çalıştırma durumunu Actions sekmesinden doğrulayın; gerçek Windows
+PC testi ayrıca yapılmalı.

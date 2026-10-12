@@ -1,8 +1,7 @@
 # Active task
-Goal: finish reusable cloud development setup.
-Prepared: four per-tool web guides and a manual Actions template-document check.
-Acceptance so far: clear setup/handoff steps, no local Python, no AI/API calls in workflow.
-Remaining: clarify Actions quota; merge PR; verify selected services' repository access;
-pin Godot version and add real engine tests plus Windows export.
-Do not claim template checks validate gameplay or builds.
-Do not develop game mechanics or generate assets.
+Goal: validate and enable low-consumption Actions infrastructure.
+Scope: shared guides and template checks, pinned Godot installer, empty validation scene,
+smoke test and Windows export. User authorized Actions after upgrading to GitHub Pro.
+Acceptance: checks pass; workflows merged to main; GitHub run evidence recorded.
+Keep actual Windows runtime/visual validation separate from Linux export success.
+No gameplay, asset generation or paid AI API integration.
