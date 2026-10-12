@@ -1,25 +1,17 @@
 # Current state
-Core: 3.2.0; reusable shared workflow, not a game.
-Repo: SerkanAydin06/game-studio-template.
-Tools: Gemini Pro web, Claude Code web, ChatGPT Pro/Codex, Meshy Pro. No Copilot.
-User tests source projects in Godot on multiple PCs; no Python/AI CLI prerequisite.
-Policy: one primary writer, short task context, local/cloud checks, public-only automatic core Actions,
-Windows export off by default, no automatic paid API/asset generation.
-Architecture: core docs/scripts + separate game starter; games have independent private repos
-and versioned core snapshots, not automatic overwrites.
-Historical GitHub engine/import/smoke/export and template checks passed on commit 24dd728.
-Validated v3 locally: manual-only YAML, template checks, separate starter and provenance,
-overwrite/nested/dirty-core refusal, real engine import/smoke in core and generated game.
-Details: docs/DOGRULAMA.md. Initial public CI verification in progress; user-PC checks still pending.
-ChatGPT is the single coordinator; START_HERE.md routes fresh sessions.
-User relays filled task packets; game COORDINATOR.md persists this workflow.
-Repository creation/writing uses actual available permissions with explicit manual fallback.
-Next: create a separate game repository only when user chooses the game; validate on user's Godot.
-Actual account quotas and individual service connections are not auto-verified.
-
-General improvement is allowed only through a separate core change with evidence and rollback.
-Game-specific customization stays in game repositories. Skills/agents are selected by capability,
-need and measured outcomes; no background self-update service is installed.
-
-Core automatic checks skip private repositories; public visibility verified on 2026-10-12.
-Game workflows remain opt-in. Exports remain manual.
+Core: 3.2.1; reusable shared workflow, not a game.
+Repo: SerkanAydin06/game-studio-template; public verified 2026-10-12.
+ChatGPT coordinates; user relays ready task packets to Claude/Gemini/Meshy when useful.
+One writer, targeted context, measured routing, relevant available skills/bounded agents.
+Games have separate private repositories by default and independent versioned snapshots.
+No local Python/AI CLI prerequisite; user tests source in Godot across PCs.
+Core public CI: template/starter checks on main push/PR; Godot on relevant changes.
+Private automatic core jobs skip; no workflows copied to games. Export is manual.
+Latest verified pre-audit public CI: commit 6ca3724; template and Godot succeeded.
+3.2.1 audit adds generated-game engine testing and mandatory coordinator/routing files.
+See docs/DOGRULAMA.md for evidence and limits; inspect CI for the current commit.
+General self-improvement uses a separate core task/branch with evidence and rollback.
+Game-specific mechanics, assets and settings never customize the core.
+No background autonomous service, cross-provider API bridge or automatic quota reading.
+Remaining real-world validation: one game through user-relayed tools, and user's visual/F5 test.
+Next: START_HERE.md when the user chooses a game. Do not add speculative infrastructure.

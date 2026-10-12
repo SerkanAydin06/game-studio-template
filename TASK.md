@@ -1,6 +1,7 @@
 # Active task
-Completed: adaptive tool/skill/agent routing, strict core/game scope,
-controlled general improvement and production quality gates.
-Checks: template, standalone starter transfer, document links and compact state limits.
-No game-specific work, paid generation or Actions run.
-Next: START_HERE.md onboarding when the user selects a game.
+Completed: final readiness audit; add standalone generated-game engine validation,
+mandatory coordination files, and consistent onboarding/state documentation.
+Acceptance: template/starter checks and public CI pass on the changed commit.
+No game development or paid asset generation.
+Next: run the first game's playable milestone via START_HERE.md;
+record actual handoff friction and results before optimizing further.
