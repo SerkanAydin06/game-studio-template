@@ -16,6 +16,9 @@ Keep editable scenes/UI in Godot resources. Preserve editor/runtime consistency.
 Use bash scripts/godot-install.sh and bash scripts/godot-check.sh in cloud when needed.
 Pin the game's engine version; never claim a test passed if tools are unavailable.
 Test changes meaningfully; headless tests do not prove graphics, performance or gameplay quality.
+Add or update game/tests/test_*.gd for each behaviour change; for bugs write the failing test first.
+Layout: game/scenes, game/scripts, game/assets, game/data, game/tests. Prefer typed GDScript,
+small scene-independent logic classes and data in Resources; keep files focused.
 Keep STATE <=250 and TASK <=200 words; detailed test records go in TESTS.md.
 Use a task branch; preserve unrelated work; no force push or destructive automatic merges.
 Record commit/PR, actual test outcome, blockers and next step at handoff.

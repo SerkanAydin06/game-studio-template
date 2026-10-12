@@ -10,6 +10,10 @@ for path in COORDINATOR.md ROUTING.md STATE.md TASK.md PROJECT.md BUDGET.md TEST
   cmp "$core/templates/game/$path" "$tmp/game/$path"
 done
 test -f "$tmp/game/.studio/SOURCE_COMMIT"
+for path in smoke_test.gd tests/test_case.gd tests/test_starter.gd; do
+  cmp "$core/templates/game/game/$path" "$tmp/game/game/$path"
+done
+grep -q '^exclude_filter=".*tests/\*' "$tmp/game/game/export_presets.cfg"
 cmp "$core/templates/game/.github/workflows/game-validation.yml" "$tmp/game/.github/workflows/game-validation.yml"
 test ! -e "$tmp/game/.github/workflows/studio-checks.yml"
 test ! -e "$tmp/game/validation"

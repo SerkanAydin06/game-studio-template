@@ -24,6 +24,7 @@ Hepsini okumayın; yalnız işe uyan satırı açın.
 - Düşük tüketim politikası: VERIMLILIK.md
 
 ## Çekirdek bakımı
+- Kontrol paneli ve yedekleme: CONTROL-PANEL.md
 - Çekirdek sınırı ve iyileştirme kuralları: CEKIRDEK-SINIRI.md
 - CI politikası: GITHUB-ACTIONS.md
 - Denetim kanıtları: DOGRULAMA.md
