@@ -2,8 +2,13 @@
 
 Bu paket Claude Code WEB ve GitHub üzerinden kullanılmak üzere hazırlanmıştır.
 Önceki Python paketinin yerine bu başlangıcı kullanın. Python/yerel AI CLI gerekmez.
-Henüz bir GitHub deposuna kurulmamıştır. Paket yalnız ortak talimatları ve iş akışını kurar;
+GitHub deposuna başlangıç dosyaları yüklendi. Paket ortak talimatları ve iş akışını kurar;
 bulutta Godot test ortamı, Windows paketleme ve oyun mekaniği içermez.
+
+## Ayrıntılı araç rehberleri
+
+[Kurulum merkezi](docs/KURULUM.md): Claude Code, ChatGPT/Codex, Gemini, Meshy ve GitHub Actions.
+Bu dal ayrıca yalnız elle başlatılan şablon kontrolü içerir; Godot/Windows build henüz yoktur.
 
 ## Bir kez kurulum
 

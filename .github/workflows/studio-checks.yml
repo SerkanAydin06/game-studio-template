@@ -1,0 +1,19 @@
+name: Studio template checks
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: studio-template-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  template:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Check template documents
+        run: bash scripts/check-template.sh
