@@ -2,6 +2,13 @@
 
 Panel: [control-panel/index.html](../control-panel/index.html)
 
+## İnternetten açma (GitHub Pages)
+Yayın adresi: https://serkanaydin06.github.io/pardex-uretici/
+
+Depo yöneticisi GitHub'da **Settings → Pages → Build and deployment → Source: GitHub Actions** ayarını seçmelidir. `.github/workflows/pages-control-panel.yml` yalnız main dalında panel değiştiğinde (veya elle tetiklendiğinde) `control-panel/` klasörünü yayımlar. GitHub Pages etkin değilse deployment başarısız olabilir; adres doğrulanmadan canlı yayın iddiasında bulunmayın.
+
+**Güvenlik:** Site herkese açıktır. Panel form girdilerini GitHub'a veya bir AI servisine yollamaz; GitHub'a yalnız anonim public CI okuma isteği yapar. Gizli anahtar girmeyin. Yayın aşamasında yalnız panel dizini aktarılır.
+
 ## Çalıştırma
 Depoyu indir/klonla, `control-panel/index.html` dosyasını Chrome veya Edge ile aç. Herhangi bir kurulum, Python, Node, servis, API anahtarı veya ücretli AI isteği gerekmez. Panel tamamen istemci tarafında çalışır.
 
