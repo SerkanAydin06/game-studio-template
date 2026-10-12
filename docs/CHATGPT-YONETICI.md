@@ -45,14 +45,13 @@ Gerçek commit/PR bağlantısı olmadan “GitHub'a kuruldu” deme.
 Kurulumdan sonra oyun deposu çalışma merkezidir; tüm çekirdeği her tur yeniden okuma.
 
 ## 3. Görevi kime vereceğiz?
-ChatGPT planlama, görev seçimi ve kabulün tek merkezidir. Bir görevde tek yazıcı vardır.
-ChatGPT mevcut bağlam ve araçlarla küçük işi tamamlayabiliyorsa doğrudan yapar.
-Claude Code, birbiriyle ilişkili kod/sahne değişiklikleri ve ilgili testler için seçilir.
-Gemini yalnız somut araştırma, referans veya görsel değerlendirme açığı için kullanılır.
-Meshy yalnız gereken tekrar kullanılabilir 3D varlık için; 2D oyunda otomatik kullanılmaz.
-Dört aracı her görevden geçirme. Küçük işleri anlamlı bir oynanabilir hedefte birleştir;
-tüm oyunu tek belirsiz dev görev haline getirme. Paralel aynı dosya düzenlemesi yok.
-Kota dolunca kısa durum kaydı bırak; başka araca devir mantıklıysa tek aktarım yap.
+Aşamaya göre varsayılan ve yedek araç: [GOREV-DAGILIMI.md](GOREV-DAGILIMI.md). Özet:
+ChatGPT planlar, paket yazar ve kabul eder; kodu kendisi yalnız küçük tek dosya işinde yazar.
+Kod + test Claude Code'a (yedek Codex), görsel stil/2D referans Gemini'ye, yalnız CC0 karşılığı
+olmayan 3D varlık Meshy'ye gider. Hata düzeltmeyi kodu yazan oturum yapar.
+Bir görevde tek yazıcı; ilgili küçük işleri tek oynanabilir sonuçta birleştir.
+Varsayılan ikinci inceleme yok: yeşil CI + PR özeti + riskli dosya diff'i kabul için yeterli.
+Kota dolunca kısa durum kaydı bırak ve tablodaki yedeğe tek aktarım yap.
 Abonelik bakiyesini tahmin etme, API'ye otomatik geçme, tasarruf garantisi verme.
 
 ## 4. Kullanıcının taşıdığı görev paketi

@@ -7,6 +7,10 @@ BUDGET.md: ek harcama, onaylanan Meshy partisi, Actions kullanımı ve durma ko�
 İlk oynanabilir küçük bölüm doğrulanmadan çok sayıda pahalı varlık üretmeyin.
 
 ## Varlık üretimi
+Önce ücretsiz kaynak: Godot'un hazır şekilleri/CSG ve CC0 paketler (kenney.nl, polyhaven.com,
+ambientcg.com, quaternius.com). İndirirken lisansı sayfada doğrula ve ASSETS.csv'ye yaz;
+lisansı karışık sitelerde (ör. opengameart.org) her dosyanın lisansını ayrı kontrol et.
+Ücretli üretim (Meshy) yalnız bu kaynaklarda uygun karşılığı olmayan özel varlık için.
 Önce varlık envanteri; oyunlar arası yeniden kullanım için kaynak/lisans uygunluğu.
 İhtiyaç tanımı: görev, ölçü, görünüş, materyal, beklenen animasyon ve cihaz bütçesi.
 Tek bir stil referansı ile pilot varlık üretin; onaydan sonra partiye geçin.

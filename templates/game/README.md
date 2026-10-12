@@ -8,4 +8,4 @@ Kullanıcı bilgisayarında Python/AI CLI gerekmez. Public depo için .github/wo
 Varsayılan main dalında ilgili push/PR değişiklikleri import/smoke kontrolünü başlatır.
 Farklı ana dal adı kullanılıyorsa workflow dal filtrelerini ona göre güncelle.
 Windows export yalnız istendiğinde: installer --templates ve checker --export.
-Hedefli testleri genişlettikçe game/smoke_test.gd ve TESTS.md'yi güncelleyin.
+Otomatik testler game/tests/test_*.gd içindedir ve CI'da kendiliğinden çalışır; kullanım TESTS.md'de.

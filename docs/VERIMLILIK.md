@@ -5,20 +5,25 @@ ChatGPT tek koordinatördür; kullanıcı hazır görevleri ve sonuçları taş�
 Ayrıntı: [yönetici akışı](CHATGPT-YONETICI.md).
 
 ## Görev yönlendirme
-| İş | Varsayılan | Ne zaman diğer araç? |
-|---|---|---|
-| Kod ve ilgili test | Küçük işte mevcut ChatGPT/Codex; kapsamlı görevde Claude Code | Devir maliyeti veya mevcut kota bunu gerektiriyorsa |
-| Tasarım/teknik karar | ChatGPT | Belirsiz güncel bilgi varsa Gemini araştırması |
-| Görsel/arayüz değerlendirmesi | Tek seçilmiş görsel yetenekli araç | Gerçek karşılaştırma ihtiyacı varsa ikinci görüş |
-| 3D üretim | Meshy | Önce mevcut model; referans gerekiyorsa tek görsel aracı |
-| Dosya sayımı, arama, log süzme | Betik/terminal | Yalnız yorum gerektiren sonucu AI değerlendirir |
-
+Aşamaya göre araç seçimi tek yerde: [GOREV-DAGILIMI.md](GOREV-DAGILIMI.md).
 Bu roller katı engel değildir; işi başlayan araç tamamlayabiliyorsa gereksiz devretmeyin.
 Mevcut oturum bağlamı işe yarıyorsa koruyun. İlgisiz yeni göreve kısa devir notuyla başlayın.
 Ana talimatları kısa tutun; kapsamı, ilgili dosyaları ve kabul ölçütünü baştan belirtin.
 “Her şeyi tekrar incele” yerine belirli hata/özellik grubu verin.
 En güçlü model ve yüksek düşünme düzeyini varsayılan yapmayın; mevcut uygun seçenekle başlayın.
 İki başarısız aynı hata düzeltmesi otomatik tekrar yerine kanıt ve yöntem değişikliği gerektirir.
+
+## Kota tasarrufu kuralları
+Bunlar ölçülmüş tasarruf iddiası değil, tur sayısını azaltan çalışma kurallarıdır.
+1. Görev paketi okunacak dosyaları listeler; AI tüm depoyu taramaz. Panel "Görev Merkezi" bunu üretir.
+2. Her mekanik/kural için game/tests/test_*.gd yazılır. Public CI testleri ücretsiz çalıştırır;
+   hatanın kullanıcı F5 denemesine ve yeni AI turuna kalması azalır.
+3. Hata düzeltmede önce hatayı yeniden üreten test, sonra en küçük düzeltme. Aynı hata geri dönmez.
+4. F5 denemesinde bulunan hatalar tek hata paketinde toplanır; her hata için ayrı tur açılmaz.
+5. İlk oynanabilir sürüm yer tutucu veya ücretsiz CC0 varlıkla yapılır (URETIM-KALITESI.md).
+   Meshy yalnız onaylanmış görsel örnekten sonra ve listede olmayan özel varlık için.
+6. Benzer küçük işler tek görevde birleştirilir; her küçük değişiklik için yeni sohbet açılmaz.
+7. Deneme sınırı görev paketinde yazılıdır; aşılırsa kanıt bildirilir ve yöntem değişir.
 
 ## Tüketim kapıları
 - Yeni oyun için PROJECT.md kapsamı ve BUDGET.md sınırları önce belirlenir.

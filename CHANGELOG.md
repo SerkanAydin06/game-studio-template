@@ -1,7 +1,18 @@
 # Çekirdek değişiklikleri
 
-## Yayınlanmamış
-docs/INDEX.md doküman haritası eklendi; START_HERE.md bağlantı verir.
+## 3.4.0
+Kontrol paneli (#11–#16) sürüme alındı ve düzeltildi: tek dosyalık tam yedek (projeler + kayıtlar),
+proje silinince kayıtların da silinmesi, kanıtsız "Tamamlandı" uyarısı, workflow başına CI durumu,
+10 dk API önbelleği, okunacak dosya listesi/deneme sınırlı görev paketi ve F5 hata paketi.
+Oyun başlangıcı: game/tests/test_*.gd otomatik test çalıştırıcısı; tüm script/sahne derleme kontrolü;
+ekran ölçekleme (canvas_items/expand); tipli GDScript uyarısı; testler export dışında.
+Görev dağılımı tek kaynakta (docs/GOREV-DAGILIMI.md): aşamaya göre birincil/yedek araç,
+koordinatör kodu yazmaz, hatayı kodu yazan oturum düzeltir, varsayılan ikinci inceleme yok.
+Belgeler: kota tasarrufu kuralları, ücretsiz CC0 varlık önceliği, test-önce hata düzeltme.
+Pages workflow action'ları SHA ile sabitlendi; README/panel sürümü CORE_VERSION ile denetlenir.
+docs/INDEX.md doküman haritası eklendi. Mevcut oyunlara otomatik uygulanmaz;
+istenirse game/smoke_test.gd ve game/tests/ seçerek kopyalanır.
+Geri alma: bu sürümün merge commit'ini revert et.
 
 ## 3.3.0
 Kullanıcının tercihiyle yeni oyunlar public varsayılır. Başlangıç paketi oyuna ait

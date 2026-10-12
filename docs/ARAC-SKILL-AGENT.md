@@ -13,15 +13,7 @@ Yeni model/özellik iddiası gerekiyorsa güncel resmi bilgiyi doğrula; her gö
 5. En az ek bağlam ve kullanıcı aktarımıyla işi bitirecek aracı seç.
    Aynı görev için model yarışı veya standart ikinci inceleme yapma.
 
-| İş | Başlangıç seçimi | Değiştirme nedeni |
-|---|---|---|
-| İhtiyaç toplama, plan, kabul | ChatGPT | Koordinatör sabit; yetki eksik işlem hazır paketle devredilir |
-| Küçük düzeltme | Mevcut yetkili kod aracı | Test/yazma erişimi yok veya somut tıkanma |
-| Birden çok dosyada uygulama | Claude Code veya mevcut Codex | Gerçek repo/terminal erişimi, mevcut bağlam ve sonuçlar belirler |
-| Kaynaklı araştırma | Araştırma erişimi olan ChatGPT veya Gemini | Eksik kaynak/kapsam; aynı araştırmayı tekrarlama |
-| 2D referans, UI değerlendirme | Mevcut uygun görsel araç | Üretim/görsel okuma yeteneği ve hedef format |
-| 3D model/texture/rig | Meshy, yalnız gerekli aşamalar | Önce mevcut varlık, basit geometri ve tekrar kullanım |
-| Test, dönüştürme, log süzme | Godot ve betikler | AI yalnız hatayı yorumlar veya gerekli kodu düzeltir |
+Aşamaya göre varsayılan araç ve yedekler: [GOREV-DAGILIMI.md](GOREV-DAGILIMI.md).
 
 ## Skills
 Yalnız oturumda gerçekten listelenen/erişilen ve göreve uygun skill'i seç.

@@ -19,6 +19,13 @@ bash scripts/godot-check.sh
 bash scripts/test-starter.sh --godot
 Gerçek Git checkout'ta başlangıç üretmeden önce değişiklikleri commit edin.
 
+## 3.4.0 denetimi (cloud, Godot 4.5.1)
+- check-template.sh, test-starter.sh ve godot-check.sh geçti; üretilen başlangıçta TESTS_PASS: 1.
+- Negatif kontrol: başarısız test, tip uyuşmazlığı ve derlenmeyen script çıkış kodu 1 verdi.
+- Panel headless Chromium'da (390 px) sahte GitHub API ile denendi: yedek/sil/geri yükle,
+  kanıt uyarısı, görev ve hata paketi, yeniden yüklemede önbellekten 0 API isteği, JS hatası yok.
+- Gerçek GitHub Pages yayını ve kullanıcının F5 denemesi bu denetimde yapılmadı.
+
 ## Yetkinlik ve sınır
 Hazır: yeni sohbet girişi, yetkiye göre repo kurulumu/manuel alternatif, ayrı oyun
 başlangıcı, hedefli görev devri, sonuç kabulü, kayıt üzerinden devam ve genel bakım süreci.

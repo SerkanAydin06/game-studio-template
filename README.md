@@ -1,11 +1,15 @@
-# Pardex Üretici — oyun üretim çekirdeği — 3.3.0
+# Pardex Üretici — oyun üretim çekirdeği — 3.4.0
 Bu depo ortak çalışma kuralları, araç rehberleri ve yeni proje başlangıcıdır.
 **Oyun kodu ve oyuna özel üretim ayrı public depoda geliştirilir.**
 Araçlar: Gemini Pro, Claude Code web, ChatGPT Pro/Codex ve Meshy Pro. Copilot kullanılmaz.
 Kullanıcı bilgisayarında Python veya yerel AI CLI gerekmez. Normal deneme Godot'ta F5 ile yapılır.
 
 ## Kontrol paneli
-Çevrim içi panel (GitHub Pages etkinleştirildikten sonra): https://serkanaydin06.github.io/pardex-uretici/\n\nKurulumsuz ve API anahtarsız yerel kontrol paneli: [control-panel/index.html](control-panel/index.html). Dosyayı tarayıcıda aç; yeni oyun tanımı, görev paketleri ve public CI durumu için kullan. Panel AI çağırmaz veya otomatik oyun üretmez. [Panel yönergesi](docs/CONTROL-PANEL.md).\n\n## Yeni sohbetten başlat
+Çevrim içi panel (GitHub Pages etkinleştirildikten sonra): https://serkanaydin06.github.io/pardex-uretici/
+
+Kurulumsuz ve API anahtarsız yerel kontrol paneli: [control-panel/index.html](control-panel/index.html). Dosyayı tarayıcıda aç; yeni oyun tanımı, görev paketleri ve public CI durumu için kullan. Panel AI çağırmaz veya otomatik oyun üretmez. [Panel yönergesi](docs/CONTROL-PANEL.md).
+
+## Yeni sohbetten başlat
 ChatGPT'ye depo bağlantısını verip “Bu depoya bağlan; START_HERE.md talimatıyla yeni oyun sürecini başlat” yaz.
 ChatGPT kısa oyun tarifini alır, yetkisi varsa ayrı public depoyu açar; yoksa senden açıp bağlantısını vermeni ister.
 Süreci ChatGPT yönetir. Diğer araçlara yalnız gereken hazır görev metnini taşırsın.

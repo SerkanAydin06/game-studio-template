@@ -9,6 +9,17 @@ küçük işte veya aynı dosyada paralel yazma için agent kullanma.
 Agent/skill/sağlayıcı seçimini TASK içinde bir cümleyle gerekçelendir.
 Bilinen kota sınırını kullan; bilinmiyorsa uydurma. Ücretli API fallback yok.
 
+## Varsayılan dağılım (çekirdek docs/GOREV-DAGILIMI.md özeti)
+| İş | Birincil | Yedek |
+|---|---|---|
+| Kapsam, plan, görev paketi, kabul | ChatGPT | Kullanıcı paketi doğrudan Claude'a verir |
+| Kod + test (kilometre taşı, özellik) | Claude Code | Codex |
+| F5 hata düzeltme (test-önce) | Kodu yazan oturum | Yeni Claude oturumu |
+| Görsel stil, 2D referans/varlık | CC0 paket, sonra Gemini | ChatGPT görsel |
+| 3D varlık | CC0 paket, sonra Meshy Image to 3D | Geçici şekil |
+| Görsel/oynanış kontrolü | Kullanıcı F5 | — |
+Varsayılan ikinci inceleme yok. Kabul: yeşil CI + PR özeti + riskli dosya diff'i.
+
 ## Kısa kayıt
 Yalnız yönlendirme kararını değiştiren sonuçları burada tut; son 10 kayıt yeterli.
 Sayısal gerçek kullanım USAGE.csv; test kanıtı TESTS.md.

@@ -12,23 +12,27 @@ Depo yöneticisi GitHub'da **Settings → Pages → Build and deployment → Sou
 ## Çalıştırma
 Depoyu indir/klonla, `control-panel/index.html` dosyasını Chrome veya Edge ile aç. Herhangi bir kurulum, Python, Node, servis, API anahtarı veya ücretli AI isteği gerekmez. Panel tamamen istemci tarafında çalışır.
 
-- **Projeler & İlerleme:** tarayıcıda proje ve görev kaydı, görev durumu, JSON yedek dışa/içe aktarma; GitHub'a otomatik yazmaz; proje kartlarında public oyun depolarının son main dalı GitHub Actions sonuçlarını salt-okunur görüntüler.\n- **Genel Bakış:** sistem rehberleri ve canlı public çekirdek CI özeti.
+- **Projeler & İlerleme:** tarayıcıda proje ve görev kaydı, görev durumu (kanıt kaydı olmadan "Tamamlandı" seçilirse onay ister), tek dosyalık tam yedek (projeler + sonuç/kullanım kayıtları) dışa/içe aktarma; eski yalnız-proje yedekleri de içe alınır; proje silinince o projenin kayıtları da silinir; GitHub'a otomatik yazmaz; proje kartlarında public oyun depolarının son main dalı GitHub Actions sonuçlarını salt-okunur görüntüler.
+- **Genel Bakış:** sistem rehberleri ve canlı public çekirdek CI özeti.
 - **Yeni Oyun:** kısa oyun tanımını alıp ChatGPT'ye taşınacak başlangıç metnini hazırlar. Yeni repo açma bağlantısı vardır; repo otomatik açılmaz.
-- **Görev Merkezi:** tek kod yazıcı ilkesine uygun, kopyalanabilir görev paketi oluşturur.
-- **Testler & CI:** GitHub public API aracılığıyla `main` dalındaki son workflow sonuçlarını okur. Bu alan yalnız çekirdek deposunundur; oyun kendi deposunda test edilir.
-- **Sonuç & Kullanım:** biten görevlerin test/PR kanıtlarını yerel kaydetme, ölçülen sağlayıcı kullanımını kaydetme, CSV/JSON dışa aktarma. Gizli API anahtarı gerekmez.\n- **Kota & Bütçe:** tasarruf politikası ve gerçek tüketim CSV başlığı.
+- **Görev Merkezi:** tek kod yazıcı ilkesine uygun, okunacak dosya listesi ve deneme sınırı içeren görev paketi; ayrıca F5 denemesindeki hataları tek pakette toplayan, önce yeniden üreten test yazdıran hata raporu oluşturur.
+- **Testler & CI:** GitHub public API aracılığıyla `main` dalında her çekirdek workflow'unun (şablon, Godot, panel yayını) son sonucunu ayrı ayrı okur. Yanıtlar oturum boyunca 10 dakika önbelleğe alınır; "Sonuçları yenile" önbelleği atlar. Bu, anahtarsız GitHub API sınırını (saatte 60 istek) korur. Bu alan yalnız çekirdek deposunundur; oyun kendi deposunda test edilir.
+- **Sonuç & Kullanım:** biten görevlerin test/PR kanıtlarını yerel kaydetme, ölçülen sağlayıcı kullanımını kaydetme, kullanım CSV dışa aktarma. Gizli API anahtarı gerekmez.
+- **Kota & Bütçe:** kota tasarrufu kuralları ve gerçek tüketim CSV başlığı.
 
 ## Sınırlar
-Panel proje/görev listelerini ve manuel sonuç/kullanım kayıtlarını tarayıcının yerel depolamasına (localStorage) kaydeder. Proje JSON yedeği, sonuç kayıtlarının yedeğinden ayrıdır; sonuçları ayrıca JSON dışa aktarın. Yeni oyun ve görev metni formları sayfa yenilemesinde sıfırlanır. Özel/ortak bilgisayarda hassas bilgi girmeyin ve gerekirse site verilerini temizleyin. Veriler cihazlar arasında otomatik eşitlenmez; JSON yedeğini kendiniz koruyun. GitHub API isteği yalnız herkese açık Actions sonuçlarını okumak içindir. Tarayıcı ağı, CORS veya GitHub hız limiti engellerse sonuçlar görünmeyebilir; doğrudan Actions sayfası bağlantısı kullanılır. Girdi doğrulaması var ancak panel kod yazmaz, görevleri yapay zekâ servislerine otomatik göndermez, oyun deposu oluşturmaz veya bağımsız tamamlanma iddiasında bulunmaz.
+Panel proje/görev listelerini ve manuel sonuç/kullanım kayıtlarını tarayıcının yerel depolamasına (localStorage) kaydeder. "Tam yedeği indir" projeleri ve tüm sonuç/kullanım kayıtlarını tek dosyada içerir. Yeni oyun ve görev metni formları sayfa yenilemesinde sıfırlanır. Özel/ortak bilgisayarda hassas bilgi girmeyin ve gerekirse site verilerini temizleyin. Veriler cihazlar arasında otomatik eşitlenmez; JSON yedeğini kendiniz koruyun. GitHub API isteği yalnız herkese açık Actions sonuçlarını okumak içindir. Tarayıcı ağı, CORS veya GitHub hız limiti engellerse sonuçlar görünmeyebilir; doğrudan Actions sayfası bağlantısı kullanılır. Girdi doğrulaması var ancak panel kod yazmaz, görevleri yapay zekâ servislerine otomatik göndermez, oyun deposu oluşturmaz veya bağımsız tamamlanma iddiasında bulunmaz.
 
 ## Manuel kalite kontrol
-1. HTML dosyasını tarayıcıda aç. Sekmeler arasında geçiş yap.\n2. Proje ve görev ekle, durumunu değiştir, sayfayı yenile ve kayıtların korunduğunu denetle. JSON yedeğini indirip geri yükle; geçersiz JSON dosyasını reddettiğini denetle.
+1. HTML dosyasını tarayıcıda aç. Sekmeler arasında geçiş yap.
+2. Proje ve görev ekle, durumunu değiştir, sayfayı yenile ve kayıtların korunduğunu denetle. Tam yedeği indir, projeyi sil, yedeği geri yükle ve proje ile kayıtların döndüğünü denetle; geçersiz JSON dosyasını reddettiğini denetle.
 3. Yeni oyun adı ve açıklaması gir, başlangıç metnini üret ve kopyala.
 4. Geçerli bir `owner/repo` ile görev metni oluştur, geçersiz repo değerini reddettiğini kontrol et.
 5. CI ekranında sonuçları yenile; bağlantı yokken hata mesajının göründüğünü doğrula.
-6. Proje kartında CI sonuçlarını kontrol et ve Yenile butonunu dene; özel depoda veya API sınırında bilgilendirme çıktığını doğrula.\n7. Dar pencere boyutunda panel menüsü ve formların kullanışlı olduğunu kontrol et.
+6. Proje kartında CI sonuçlarını kontrol et ve Yenile butonunu dene; özel depoda veya API sınırında bilgilendirme çıktığını doğrula.
+7. Dar pencere boyutunda panel menüsü ve formların kullanışlı olduğunu kontrol et.
 
-Statik dosya varlığı `scripts/check-template.sh` içinde denetlenir. Bu kontrol tarayıcı çalıştırması veya uçtan uca etkileşim testi yerine geçmez.
+Statik dosya varlığı ve panel sürümünün CORE_VERSION ile aynı olması `scripts/check-template.sh` içinde denetlenir. Bu kontrol tarayıcı çalıştırması veya uçtan uca etkileşim testi yerine geçmez.
 
 ## Önceki panelden taşınan işlevler
 Görev sonucunu commit/PR bağlantısıyla kaydetme ve USAGE.csv biçiminde gerçek tüketim kaydetme bu sürümde yereldir. Önceki hesapla eşitlenen bulut veri alanı taşınmadı; güvenli hesap doğrulaması olmadan istemciye gizli yetki anahtarı eklenmez.

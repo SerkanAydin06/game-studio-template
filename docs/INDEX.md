@@ -4,6 +4,7 @@ Hepsini okumayın; yalnız işe uyan satırı açın.
 ## Başlangıç ve koordinasyon
 - Yeni sohbet: ../START_HERE.md
 - Koordinatör rolü ve görev dağıtımı: CHATGPT-YONETICI.md
+- Aşamaya göre görev dağılımı: GOREV-DAGILIMI.md
 - Araç/skill/agent seçimi: ARAC-SKILL-AGENT.md
 - Görev, hata ve devir biçimleri: GOREV-AKISI.md
 
@@ -24,6 +25,7 @@ Hepsini okumayın; yalnız işe uyan satırı açın.
 - Düşük tüketim politikası: VERIMLILIK.md
 
 ## Çekirdek bakımı
+- Kontrol paneli ve yedekleme: CONTROL-PANEL.md
 - Çekirdek sınırı ve iyileştirme kuralları: CEKIRDEK-SINIRI.md
 - CI politikası: GITHUB-ACTIONS.md
 - Denetim kanıtları: DOGRULAMA.md

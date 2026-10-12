@@ -15,6 +15,8 @@ Tekrar adımları (en fazla 5):
 Beklenen / görülen:
 İlk hata satırı, dosya ve satır:
 Gerekliyse tek ekran görüntüsü veya kısa video:
+Aynı denemede bulunan hatalar tek pakette gönderilir (panel: Görev Merkezi > Godot F5 hata raporu).
+Düzeltme yöntemi: önce hatayı yeniden üreten game/tests/test_*.gd, sonra en küçük düzeltme.
 
 ## Araç devri
 STATE.md + TASK.md + ilgili diff/dosyalar + test özeti.
