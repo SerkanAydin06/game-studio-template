@@ -1,4 +1,4 @@
-# Oyun üretim çekirdeği — 3.1.0
+# Oyun üretim çekirdeği — 3.2.0
 Bu depo ortak çalışma kuralları, araç rehberleri ve yeni proje başlangıcıdır.
 **Oyun kodu ve oyuna özel üretim ayrı özel depoda geliştirilir.**
 Araçlar: Gemini Pro, Claude Code web, ChatGPT Pro/Codex ve Meshy Pro. Copilot kullanılmaz.
@@ -18,6 +18,13 @@ Süreci ChatGPT yönetir. Diğer araçlara yalnız gereken hazır görev metnini
 - [Varlık, kalite ve test kuralları](docs/URETIM-KALITESI.md)
 - [Görev ve hata aktarımı](docs/GOREV-AKISI.md)
 - [GitHub Actions: yalnız istek üzerine](docs/GITHUB-ACTIONS.md)
+
+## Genel gelişim ve sınırlar
+- [Araç, skill ve agent seçimi](docs/ARAC-SKILL-AGENT.md)
+- [Çekirdeğin sınırı ve genel iyileştirme](docs/CEKIRDEK-SINIRI.md)
+- [Oynanabilir örnekten teslimata kalite kapıları](docs/KALITE-KAPILARI.md)
+Çekirdek hiçbir oyuna göre özelleştirilmez. Genel iyileştirmeler ayrı bakım göreviyle yapılır.
+Bu sistem kullanıcı aracılı koordinasyondur; sağlayıcılar arasında çalışan otomatik servis değildir.
 
 ## Dört aracın rolü
 | Araç | Kullanım |

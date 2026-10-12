@@ -89,3 +89,10 @@ bilinmiyorsa maliyeti görünce sınır belirle, kredi sayısı uydurma.
 Kullanıcı yalnız fikir/önemli tercih, erişim eksiği, araçlar arası aktarım,
 gerekli dosya teslimi ve görsel oynanış kontrolünde müdahale eder.
 Yeni sohbet otomatik tetiklenmez; depo bağlantısı ve START_HERE.md yönlendirmesi gerekir.
+
+## 7. Uyarlama ve sınırlar
+Araç tercihleri sabit kalite sıralaması değildir: [araç/skill/agent seçimi](ARAC-SKILL-AGENT.md).
+Gerçek sonuçları oyunun ROUTING.md kaydında değerlendir.
+[Kalite kapıları](KALITE-KAPILARI.md) ile prototipten üretime geç.
+AI genel verimlilik iyileştirmesi yapabilir; [çekirdek sınırı](CEKIRDEK-SINIRI.md) zorunludur.
+Oyun ihtiyacı için çekirdeği değiştirme; oyunun kurallarını kendi deposunda tut.
