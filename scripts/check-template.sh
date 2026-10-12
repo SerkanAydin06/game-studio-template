@@ -30,4 +30,6 @@ grep -q 'id="make-bug"' control-panel/index.html || { echo "FAIL: control panel 
 grep -q "Pardex $(tr -d '\r\n' < CORE_VERSION)<" control-panel/index.html || { echo "FAIL: control panel version differs from CORE_VERSION" >&2; exit 1; }
 grep -q "^# .* — $(tr -d '\r\n' < CORE_VERSION)$" README.md || { echo "FAIL: README version differs from CORE_VERSION" >&2; exit 1; }
 grep -q 'id="run-list"' control-panel/index.html || { echo "FAIL: control panel CI UI missing" >&2; exit 1; }
+grep -q 'const allPassed=checks.length>0' control-panel/index.html || { echo "FAIL: complete CI checks missing" >&2; exit 1; }
+if grep -q "Patron, iş tamamlandı." control-panel/index.html; then echo "FAIL: unverified completion label inside panel" >&2; exit 1; fi
 echo "PASS: template documents, panel structure and headers only. Browser interaction and Godot/runtime tests NOT performed."
