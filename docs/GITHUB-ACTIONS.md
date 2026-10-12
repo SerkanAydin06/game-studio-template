@@ -9,7 +9,10 @@ Kaynak: https://docs.github.com/en/billing/concepts/product-billing/github-actio
 - Godot/senaryo/script/motor/workflow dosyası değişirse import ve smoke kontrolü.
 - Job koşulu otomatik çalışmaları yalnız public depoda açar. Private depoda job atlanır.
 - workflow_dispatch private depoda da çalışabilir ve kota kullanabilir.
-- Cron veya AI/API çağrısı yoktur; read-only izin, sabit action sürümü ve timeout korunur.
+- AI/API anahtarı yoktur. Tek zamanlanmış iş core-feedback.yml: haftalık, AI çağırmaz, public oyun
+  dosyalarını okur ve yalnız bu depodaki geri bildirim issue'sunu günceller (issues: write).
+  GitHub, 60 gün etkinlik olmayan public depoda zamanlanmış işi durdurabilir; elle yeniden açılır.
+- Diğer işler read-only izin, sabit action sürümü ve timeout ile çalışır.
 - Fork PR'leri normal pull_request kullanır; pull_request_target veya secret erişimi yoktur.
 - GitHub dış katkı çalışmaları için ayrıca onay isteyebilir; otomatik izin genişletme yapılmaz.
 - Godot başlatıcının bulut testi kullanıcı bilgisayarındaki görsel testi karşılamaz.
@@ -28,7 +31,8 @@ Günlük deneme Godot'ta F5'tir.
 
 ## Ayrı oyunlar
 Yeni oyunlar kullanıcının tercihiyle public açılır; templates/game/.github oyun CI'sını içerir.
-main push/PR'de game/, scripts/, motor ve workflow değişiklikleri import/smoke başlatır.
+main push/PR'de game/, scripts/, motor ve workflow değişiklikleri import/smoke başlatır;
+ilk adım yeni çekirdek sürümü varsa uyarı (notice) gösterir, derlemeyi durdurmaz.
 Export yalnız elle seçilir. Mevcut oyunlar kendiliğinden public yapılmaz veya yeniden kurulmaz.
 Çekirdeği public yapmak private oyunun Actions kullanımını ücretsiz yapmaz.
 Private oyun içeriğini ücretsiz çalıştırmak için public çekirdeğe taşımayın.

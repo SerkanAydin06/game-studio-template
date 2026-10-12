@@ -26,6 +26,7 @@ erişim veya kota yoksa "Yedek" sütunu kullanılır. Tasarruf oranı ölçülme
 | 9. Görsel/oynanış kontrolü | Kullanıcı F5 | 1 ekran görüntüsü + not | Gemini yalnız görsel kalite sorusu için |
 | 10. Kabul ve kayıt | ChatGPT | PR bağlantısı | CI kırmızıysa paket yazıcıya geri |
 | 11. Paket (.exe) | Elle Actions export | İstek | Yalnız paylaşım/mağaza için |
+| 12. Çekirdek iyileştirme | Claude Code, çekirdek deposunda tek PR (kilometre taşı sonunda, ölçüte uyan geri bildirim varsa) | Çekirdek bakım paketi | Codex; ölçüte uymayan öneri bekler |
 
 ## Kota dolunca
 Kod: Claude ↔ Codex; devir yalnız STATE.md + TASK.md + açık PR ile, sohbet geçmişi taşınmaz.

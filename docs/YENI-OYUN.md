@@ -13,11 +13,12 @@ Yeni oyun istendiğinde adını ve hedef public depoyu belirleyin. Mevcut depoya
    yetkisi yoksa kullanıcıdan public boş depo açıp bağlantısını vermesini ister.
    Yazma/ilk commit yetkisi yoksa kurulumu hazır görev paketiyle Claude Code'a devreder.
 5. Ana geliştirici yalnız oyun deposunu seçer. Tam çekirdek rehberleri otomatik yüklenmez.
-6. PROJECT.md ve BUDGET.md oyun kararı verildiğinde doldurulur. Başlangıç sahnesi yalnız boş iskelettir.
+6. Oyunun owner/repo adı çekirdeğin GAMES.txt dosyasına eklenir (öğrenme döngüsü toplayıcısı için).
+7. PROJECT.md ve BUDGET.md oyun kararı verildiğinde doldurulur. Başlangıç sahnesi yalnız boş iskelettir.
 
 ## Aktarılan küçük paket
 AGENTS.md, CLAUDE.md, STATE.md, TASK.md, PROJECT.md, BUDGET.md, ASSETS.csv, USAGE.csv,
-TESTS.md, COORDINATOR.md, .godot-version, .godot-project, .gitignore, .gitattributes, game/, scripts/ ve
+TESTS.md, COORDINATOR.md, ROUTING.md, CORE-FEEDBACK.md, scripts/core-update-check.sh, .godot-version, .godot-project, .gitignore, .gitattributes, game/, scripts/ ve
 .studio/CORE_VERSION, SOURCE_COMMIT, SOURCE_REPOSITORY.
 templates/game/.github/workflows/game-validation.yml oyun kökündeki .github/workflows/ içine aktarılır.
 Public oyunda standart ubuntu-latest ile otomatik import/smoke çalışır; private olursa otomatik job atlanır.

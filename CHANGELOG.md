@@ -1,5 +1,13 @@
 # Çekirdek değişiklikleri
 
+## 3.5.0
+Öğrenme döngüsü: oyunlar çekirdek eksiklerini CORE-FEEDBACK.md'ye tek satırla yazar (ek AI turu yok);
+haftalık core-feedback.yml (AI yok, anahtar yok) GAMES.txt'deki public oyunların açık satırlarını
+tek issue'da toplar; kilometre taşı sonunda ölçüte uyan öneriler tek çekirdek PR'ında uygulanır.
+Oyun CI'sı yeni çekirdek sürümünü bildirir (scripts/core-update-check.sh, değişiklik özetiyle).
+Panel: oyun kartında çekirdek sürümü ve açık öneri sayısı; çekirdek bakım paketi.
+Mevcut oyunlar: CORE-FEEDBACK.md ve scripts/core-update-check.sh seçerek eklenebilir.
+
 ## 3.4.0
 Kontrol paneli (#11–#16) sürüme alındı ve düzeltildi: tek dosyalık tam yedek (projeler + kayıtlar),
 proje silinince kayıtların da silinmesi, kanıtsız "Tamamlandı" uyarısı, workflow başına CI durumu,

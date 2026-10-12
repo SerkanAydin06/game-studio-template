@@ -40,6 +40,7 @@ templates/game paketini gizli .github klasörü dahil aktar; kökteki çekirdek 
 Yeni oyun için kullanıcının seçimi Public'tir; tekrar Private önermeyin. Mevcut private depoyu
 kendiliğinden yayımlamayın; bu oyun için görünürlük talebi ve erişimi doğrulayın.
 Kaynak çekirdeğin tam commit ve sürümünü .studio içine kaydet.
+Oyunun owner/repo adını çekirdeğin GAMES.txt dosyasına ekle (yazamıyorsan kurulum paketine koy).
 PROJECT.md'ye oyun tarifini, BUDGET.md'ye sınırları, STATE/TASK'a ilk hedefi yaz.
 Gerçek commit/PR bağlantısı olmadan “GitHub'a kuruldu” deme.
 Kurulumdan sonra oyun deposu çalışma merkezidir; tüm çekirdeği her tur yeniden okuma.

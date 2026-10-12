@@ -1,0 +1,44 @@
+# Learning loop: weekly, no AI, no secrets. Reads public games' CORE-FEEDBACK.md and keeps
+# one issue in this repository up to date. Public repository runner minutes are free.
+name: Core feedback collector
+on:
+  schedule:
+    - cron: '23 5 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: core-feedback
+  cancel-in-progress: true
+jobs:
+  collect:
+    if: github.event_name == 'workflow_dispatch' || github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Collect open feedback
+        run: bash scripts/core-feedback.sh > feedback.md 2> count.txt
+      - name: Update feedback issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          title='Çekirdek geri bildirimi (otomatik)'
+          count=$(sed -n 's/^OPEN_COUNT=//p' count.txt)
+          number=$(gh issue list --state open --search "in:title \"$title\"" --json number,title \
+            --jq "map(select(.title == \"$title\")) | .[0].number // empty")
+          if [[ "$count" -gt 0 ]]; then
+            if [[ -n "$number" ]]; then
+              gh issue edit "$number" --body-file feedback.md
+            else
+              gh issue create --title "$title" --body-file feedback.md
+            fi
+          elif [[ -n "$number" ]]; then
+            gh issue close "$number" --comment "Açık öneri kalmadı."
+          fi
+          echo "Open feedback rows: $count"

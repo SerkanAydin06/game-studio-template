@@ -1,0 +1,2 @@
+# Public oyun depoları (owner/repo, satır başına bir). Yeni oyun kurulunca koordinatör ekler.
+# core-feedback.yml bunların CORE-FEEDBACK.md dosyasındaki "acik" satırları haftalık toplar.

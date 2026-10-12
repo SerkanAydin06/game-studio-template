@@ -1,4 +1,4 @@
-# Pardex Üretici — oyun üretim çekirdeği — 3.4.0
+# Pardex Üretici — oyun üretim çekirdeği — 3.5.0
 Bu depo ortak çalışma kuralları, araç rehberleri ve yeni proje başlangıcıdır.
 **Oyun kodu ve oyuna özel üretim ayrı public depoda geliştirilir.**
 Araçlar: Gemini Pro, Claude Code web, ChatGPT Pro/Codex ve Meshy Pro. Copilot kullanılmaz.
@@ -25,6 +25,10 @@ Süreci ChatGPT yönetir. Diğer araçlara yalnız gereken hazır görev metnini
 - [GitHub Actions: public çekirdek kontrolleri](docs/GITHUB-ACTIONS.md)
 
 ## Genel gelişim ve sınırlar
+Sistem oyun yaptıkça gelişir: oyunlar çekirdek eksiklerini CORE-FEEDBACK.md'ye yazar, haftalık
+otomatik toplayıcı bunları tek issue'da birleştirir, uygun olanlar kilometre taşı sonunda tek PR ile
+çekirdeğe alınır ve oyun CI'sı yeni sürümü bildirir. AI kendiliğinden başlamaz; bakım paketini
+panel hazırlar. Ayrıntı: [öğrenme döngüsü](docs/CEKIRDEK-SINIRI.md).
 - [Araç, skill ve agent seçimi](docs/ARAC-SKILL-AGENT.md)
 - [Çekirdeğin sınırı ve genel iyileştirme](docs/CEKIRDEK-SINIRI.md)
 - [Oynanabilir örnekten teslimata kalite kapıları](docs/KALITE-KAPILARI.md)

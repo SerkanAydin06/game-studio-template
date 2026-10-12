@@ -26,6 +26,12 @@ Gerçek Git checkout'ta başlangıç üretmeden önce değişiklikleri commit ed
   kanıt uyarısı, görev ve hata paketi, yeniden yüklemede önbellekten 0 API isteği, JS hatası yok.
 - Gerçek GitHub Pages yayını ve kullanıcının F5 denemesi bu denetimde yapılmadı.
 
+## 3.5.0 denetimi (öğrenme döngüsü)
+- core-feedback.sh örnek dosyalarla: yalnız "acik" satırlar alındı, HTML etkisizleştirildi,
+  erişilemeyen ve geçersiz depo raporlandı. Gerçek issue güncellemesi birleştirme sonrası elle çalıştırmada görülür.
+- core-update-check.sh canlı çekirdeğe karşı: eski sürümde notice + yeni CHANGELOG bölümleri, güncelde sessiz.
+- check-template.sh ve test-starter.sh --godot geçti; panel tarayıcıda denendi.
+
 ## Yetkinlik ve sınır
 Hazır: yeni sohbet girişi, yetkiye göre repo kurulumu/manuel alternatif, ayrı oyun
 başlangıcı, hedefli görev devri, sonuç kabulü, kayıt üzerinden devam ve genel bakım süreci.
