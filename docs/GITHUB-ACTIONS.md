@@ -27,8 +27,10 @@ Normal push/PR executable veya artifact üretmez. İsteğe bağlı artifact bir 
 Günlük deneme Godot'ta F5'tir.
 
 ## Ayrı oyunlar
-Yeni oyun başlangıcına .github kopyalanmaz. Çekirdeği public yapmak private oyunun
-Actions kullanımını ücretsiz yapmaz. Oyun CI/görünürlük kararı ayrı görevdir.
+Yeni oyunlar kullanıcının tercihiyle public açılır; templates/game/.github oyun CI'sını içerir.
+main push/PR'de game/, scripts/, motor ve workflow değişiklikleri import/smoke başlatır.
+Export yalnız elle seçilir. Mevcut oyunlar kendiliğinden public yapılmaz veya yeniden kurulmaz.
+Çekirdeği public yapmak private oyunun Actions kullanımını ücretsiz yapmaz.
 Private oyun içeriğini ücretsiz çalıştırmak için public çekirdeğe taşımayın.
 
 ## Yerel/cloud kontrol

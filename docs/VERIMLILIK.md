@@ -22,7 +22,8 @@ En güçlü model ve yüksek düşünme düzeyini varsayılan yapmayın; mevcut 
 
 ## Tüketim kapıları
 - Yeni oyun için PROJECT.md kapsamı ve BUDGET.md sınırları önce belirlenir.
-- Günlük test cloud ortamında; Actions yalnız belirli bir bağımsız kontrol istendiğinde.
+- Günlük test cloud ortamında; public çekirdek ve public oyun CI standart runner ile otomatik.
+  Aynı commit'in başarılı kontrolünü gerekçesiz tekrar çalıştırma.
 - Exe yalnız kullanıcı paket istediğinde. Godot F5 denemesi için gerekmez.
 - Meshy üretimi önce gerekçe, varlık tanımı ve arayüzde maliyetle planlanır.
   Onaylı bir parti bütçesi içinde rutin adımlarda tekrar tekrar izin istenmez.

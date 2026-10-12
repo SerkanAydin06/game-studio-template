@@ -1,7 +1,5 @@
 # Active task
-Completed: final readiness audit; add standalone generated-game engine validation,
-mandatory coordination files, and consistent onboarding/state documentation.
-Acceptance: template/starter checks and public CI pass on the changed commit.
-No game development or paid asset generation.
-Next: run the first game's playable milestone via START_HERE.md;
-record actual handoff friction and results before optimizing further.
+Completed: new-game visibility defaults to public and starter includes game-specific CI.
+Standard ubuntu-latest runner; private automatic jobs skip; export remains manual.
+Acceptance: generated workflow copied correctly; core/starter checks pass.
+Existing game repositories are not overwritten or automatically published.

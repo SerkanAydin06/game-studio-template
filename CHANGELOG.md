@@ -1,5 +1,9 @@
 # Çekirdek değişiklikleri
 
+## 3.3.0
+Kullanıcının tercihiyle yeni oyunlar public varsayılır. Başlangıç paketi oyuna ait
+standart runner CI içerir; export elle seçilir. Mevcut oyunlar otomatik değiştirilmez.
+
 ## 3.2.1
 Public CI ayrı oluşturulan oyun başlangıcını aynı motorla doğrular. Koordinatör ve
 yönlendirme dosyaları zorunlu kontrole alındı. İlk giriş/durum belgeleri güncellendi.

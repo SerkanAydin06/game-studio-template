@@ -9,8 +9,8 @@ hesapları birbirine bağlayan veya arka planda çalışan otomatik servis deği
 eksikleri sor: oyun fikri ve temel oynanış, 2D/3D ve görsel hedef, hedef cihaz/platform,
 tekli/çoklu oyuncu. Oyun adı geçici olabilir. Kullanıcı serbestçe anlatabilir.
 Teknik terim veya uzun form doldurtma. Gerekirse en fazla üç kritik soru grupla.
-Varsayılanlar: Godot, ayrı özel GitHub deposu, mevcut dört abonelik, ek ücret yok,
-ilk aşamada geçici/mevcut varlıklar, yerel F5 denemesi, otomatik Actions/export yok.
+Varsayılanlar: Godot, ayrı public GitHub deposu, mevcut dört abonelik, ek ücret yok,
+ilk aşamada geçici/mevcut varlıklar, yerel F5 denemesi, public oyunda standart runner CI açık; otomatik export yok.
 Hedef cihaz bilinmiyorsa varsayımı açıkça kaydet; 3D performans kararı için cihaz bilgisini al.
 Motor sürümünü mevcut projede koru; yeni başlangıcın sürümü .godot-version içindedir.
 Kısa oyun özeti, kapsam dışı işler ve ilk oynanabilir hedefi yaz.
@@ -21,8 +21,8 @@ Fikir zaten yeterince açıksa yeni bir “başlayayım mı?” turu açma.
 Mevcut oturumda gerçekten sunulan GitHub okuma, oluşturma, yazma ve çalışma ortamı
 yeteneklerini kontrol et. Bir aboneliğin varlığı bu yetkilerin verildiği anlamına gelmez.
 - Oluşturma varsa: hesap/hedef adını belirle, mevcut depoyla çakışmayı kontrol et,
-  yetki kapsamında özel oyun deposu oluştur. Gerçek URL'yi doğrula.
-- Oluşturma yoksa: “GitHub'da [önerilen-ad] adlı Private boş depo aç;
+  yetki kapsamında public oyun deposu oluştur. Gerçek URL'yi doğrula.
+- Oluşturma yoksa: “GitHub'da [önerilen-ad] adlı Public boş depo aç;
   README/.gitignore/license ekleme. Bağlantısını gönder” de.
   Sadece ad gelirse bilinen hesap altında doğru depoyu doğrula; hesap belirsizse URL iste.
 - Depo erişilmiyorsa uygulamaya o depo için erişim verilmesini iste.
@@ -36,7 +36,9 @@ yeteneklerini kontrol et. Bir aboneliğin varlığı bu yetkilerin verildiği an
 
 Mevcut dosyaları olan hedefi incele; başlangıcı üzerine körlemesine kopyalama.
 Sadece GitHub “Use this template” ile tüm çekirdeği oyun deposuna çoğaltma.
-templates/game paketi ile gerekli ortak dosyaları aktar; .github ve validation aktarılmaz.
+templates/game paketini gizli .github klasörü dahil aktar; kökteki çekirdek .github ve validation aktarılmaz.
+Yeni oyun için kullanıcının seçimi Public'tir; tekrar Private önermeyin. Mevcut private depoyu
+kendiliğinden yayımlamayın; bu oyun için görünürlük talebi ve erişimi doğrulayın.
 Kaynak çekirdeğin tam commit ve sürümünü .studio içine kaydet.
 PROJECT.md'ye oyun tarifini, BUDGET.md'ye sınırları, STATE/TASK'a ilk hedefi yaz.
 Gerçek commit/PR bağlantısı olmadan “GitHub'a kuruldu” deme.

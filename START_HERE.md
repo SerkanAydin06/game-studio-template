@@ -3,7 +3,7 @@ Bu depo oyun üretim çekirdeğidir. Kullanıcı yalnız ChatGPT ile süreci yö
 diğer araçlara verilen hazır metinleri ve çıkan sonuçları taşır.
 
 ChatGPT: AGENTS.md ve docs/CHATGPT-YONETICI.md dosyalarını oku.
-- Yeni oyun: tarif al, ayrı özel depoyu hazırla, küçük oynanabilir ilk hedefle başla.
+- Yeni oyun: tarif al, ayrı public depoyu hazırla, küçük oynanabilir ilk hedefle başla.
 - Devam: oyun deposu bağlantısını al; oradaki STATE.md, TASK.md ve COORDINATOR.md ile sürdür.
 - Çekirdek düzenleme: kökteki STATE.md/TASK.md üzerinden çalış.
 Oyun durumunu bu çekirdeğin STATE.md dosyasına yazma.

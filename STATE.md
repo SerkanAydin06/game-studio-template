@@ -1,12 +1,12 @@
 # Current state
-Core: 3.2.1; reusable shared workflow, not a game.
+Core: 3.3.0; reusable shared workflow, not a game.
 Repo: SerkanAydin06/pardex-uretici; public verified 2026-10-12.
 ChatGPT coordinates; user relays ready task packets to Claude/Gemini/Meshy when useful.
 One writer, targeted context, measured routing, relevant available skills/bounded agents.
-Games have separate private repositories by default and independent versioned snapshots.
+Games have separate public repositories by default and independent versioned snapshots.
 No local Python/AI CLI prerequisite; user tests source in Godot across PCs.
 Core public CI: template/starter checks on main push/PR; Godot on relevant changes.
-Private automatic core jobs skip; no workflows copied to games. Export is manual.
+Private automatic jobs skip; games receive their own standard-runner CI. Export is manual.
 Latest verified pre-audit public CI: commit 6ca3724; template and Godot succeeded.
 3.2.1 audit adds generated-game engine testing and mandatory coordinator/routing files.
 See docs/DOGRULAMA.md for evidence and limits; inspect CI for the current commit.
