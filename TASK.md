@@ -1,7 +1,6 @@
 # Active task
-Goal: audit shared core for maximum useful output with minimum quota/credit use.
-Scope: clear core/game separation; four web-tool guides; targeted checks; manual Actions;
-optional export; independent versioned game starter; Godot source workflow across PCs.
-Acceptance: core checks, new-project isolation and overwrite refusal, Godot import/smoke,
-manual-only workflow structure and no workflow copied into games.
-No actual game development or paid asset generation.
+Completed: define ChatGPT-led onboarding, repository capability fallback and user-relayed task packets.
+Scope: shared core and independent starter only; no actual game creation.
+Next: new-game requests enter START_HERE.md, collect missing essentials,
+initialize a separate private repository, and begin a playable milestone.
+Validation: template and starter checks; no Actions or paid asset generation.

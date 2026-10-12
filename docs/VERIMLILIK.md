@@ -1,10 +1,13 @@
 # Düşük tüketim politikası
 Amaç ölçülen iş başına tüketimi azaltmak; en ucuz modelle sürekli tekrar yapmak değil.
 
+ChatGPT tek koordinatördür; kullanıcı hazır görevleri ve sonuçları taşır.
+Ayrıntı: [yönetici akışı](CHATGPT-YONETICI.md).
+
 ## Görev yönlendirme
 | İş | Varsayılan | Ne zaman diğer araç? |
 |---|---|---|
-| Kod ve ilgili test | Claude Code web | Somut tıkanma veya önemli bağımsız incelemede Codex |
+| Kod ve ilgili test | Küçük işte mevcut ChatGPT/Codex; kapsamlı görevde Claude Code | Devir maliyeti veya mevcut kota bunu gerektiriyorsa |
 | Tasarım/teknik karar | ChatGPT | Belirsiz güncel bilgi varsa Gemini araştırması |
 | Görsel/arayüz değerlendirmesi | Tek seçilmiş görsel yetenekli araç | Gerçek karşılaştırma ihtiyacı varsa ikinci görüş |
 | 3D üretim | Meshy | Önce mevcut model; referans gerekiyorsa tek görsel aracı |
