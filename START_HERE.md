@@ -6,6 +6,7 @@ ChatGPT: AGENTS.md ve docs/CHATGPT-YONETICI.md dosyalarını oku.
 - Yeni oyun: tarif al, ayrı public depoyu hazırla, küçük oynanabilir ilk hedefle başla.
 - Devam: oyun deposu bağlantısını al; oradaki STATE.md, TASK.md ve COORDINATOR.md ile sürdür.
 - Çekirdek düzenleme: kökteki STATE.md/TASK.md üzerinden çalış.
+Tüm doküman haritası: docs/INDEX.md (yalnız gerekeni aç).
 Oyun durumunu bu çekirdeğin STATE.md dosyasına yazma.
 Yeni sohbet geçmiş sohbeti biliyor varsayılmaz; depodaki güncel kayıtları kullan.
 Erişim yoksa okuyormuş gibi davranma; kullanıcıdan GitHub erişimi veya bu başlangıç dosyalarını iste.
