@@ -72,6 +72,39 @@ async function loadCI(){$('ci-message').textContent='Son public CI sonuçları o
 $('run-list').replaceChildren();for(const r of runs){const li=document.createElement('li'),a=document.createElement('a');a.href=r.html_url;a.target='_blank';a.rel='noopener noreferrer';a.textContent=r.name+' — '+(r.conclusion||r.status)+' · '+new Date(r.created_at).toLocaleString('tr-TR');li.appendChild(a);$('run-list').appendChild(li);}put('ci-message',runs.length?'Ana dal için son sonuçlar listelendi.':'Ana dalda workflow sonucu bulunamadı.');put('last-update','Güncellendi: '+new Date().toLocaleTimeString('tr-TR'));}catch(e){put('ci-message','Canlı sonuçlar alınamadı: '+e.message+'. Actions bağlantısından kontrol edebilirsiniz.');put('last-update','GitHub bağlantısı yok');}}
 
 const STORAGE_KEY='pardex.projectTracker.v1';
+const ciCache=new Map();
+const CI_TTL=120000;
+async function getGameCI(repoName,force=false){
+ const cached=ciCache.get(repoName);
+ if(!force&&cached&&Date.now()-cached.at<CI_TTL)return cached.value;
+ try{
+  const response=await fetch('https://api.github.com/repos/'+repoName+'/actions/runs?per_page=30&branch=main',{headers:{Accept:'application/vnd.github+json'}});
+  if(!response.ok)throw Error(response.status===404?'Depo bulunamadı veya erişilemiyor':response.status===403?'GitHub API sınırı / erişim engeli':'HTTP '+response.status);
+  const data=await response.json();
+  const runs=Array.isArray(data.workflow_runs)?data.workflow_runs:[];
+  const latestByWorkflow=new Map();
+  for(const run of runs){if(run&&run.name&&!latestByWorkflow.has(run.name))latestByWorkflow.set(run.name,run)}
+  const selected=[...latestByWorkflow.values()].slice(0,4).map(run=>({name:run.name,status:run.status,conclusion:run.conclusion,url:run.html_url,created:run.created_at}));
+  const value={runs:selected};ciCache.set(repoName,{at:Date.now(),value});return value;
+ }catch(error){return {error:error.message}}
+}
+async function updateGameCI(repoName,target,force=false){
+ target.textContent='GitHub testleri okunuyor…';
+ const result=await getGameCI(repoName,force);
+ if(!target.isConnected)return;
+ target.replaceChildren();
+ if(result.error){target.textContent='CI okunamadı: '+result.error;return}
+ if(!result.runs.length){target.textContent='main dalında workflow çalışması bulunamadı.';return}
+ for(const run of result.runs){
+  const line=document.createElement('p');line.className='muted';
+  const a=document.createElement('a');
+  try{const url=new URL(run.url);if(url.protocol!=='https:'||url.hostname!=='github.com')throw Error('invalid url');a.href=url.href}
+  catch{line.textContent='Geçersiz workflow bağlantısı';target.append(line);continue}
+  a.target='_blank';a.rel='noopener noreferrer';
+  a.textContent=run.name+' — '+(run.status==='completed'?(run.conclusion==='success'?'Başarılı':run.conclusion||'Bilinmiyor'):'Çalışıyor');
+  line.append(a);target.append(line);
+ }
+}
 let projects=[];
 function saveProjects(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(projects));put('project-message','Yerel kayıt güncellendi.');return true}catch(e){put('project-message','Kaydedilemedi: '+e.message);return false}}
 function readProjects(){try{const value=localStorage.getItem(STORAGE_KEY);if(value)projects=validateBackup(JSON.parse(value));}catch(e){put('project-message','Yerel kayıt okunamadı: '+e.message);projects=[]}renderProjects()}
@@ -85,6 +118,10 @@ const div=document.createElement('div');div.className='card';div.style.marginBot
 const h=document.createElement('h3');h.textContent=p.name;div.append(h);
 const a=document.createElement('a');a.href='https://github.com/'+p.repo;a.target='_blank';a.rel='noopener noreferrer';a.textContent=p.repo+' ↗';div.append(a);
 const count=document.createElement('p');count.className='muted';count.textContent=p.tasks.filter(t=>t.status==='Tamamlandı').length+' / '+p.tasks.length+' görev tamamlandı';div.append(count);
+const ciArea=document.createElement('div');ciArea.className='project-ci';ciArea.setAttribute('aria-live','polite');
+const ciButton=document.createElement('button');ciButton.className='secondary';ciButton.textContent='Testleri yenile';
+ciButton.addEventListener('click',()=>{ciCache.delete(p.repo);updateGameCI(p.repo,ciArea,true)});
+div.append(ciArea,ciButton);updateGameCI(p.repo,ciArea);
 const remove=document.createElement('button');remove.className='secondary';remove.textContent='Projeyi sil';remove.addEventListener('click',()=>{if(confirm(p.name+' ve tüm yerel görevleri silinsin mi?')){projects=projects.filter(x=>x.id!==p.id);saveProjects();renderProjects()}});div.append(remove);
 for(const task of p.tasks){const row=document.createElement('div');row.className='actions';row.style.alignItems='center';row.style.padding='7px 0';const label=document.createElement('span');label.style.flex='1';label.textContent=task.title+' · '+task.owner;
 const state=document.createElement('select');state.style.width='auto';for(const s of ['Bekliyor','Devam ediyor','Test ediliyor','Tamamlandı']){const option=document.createElement('option');option.textContent=s;option.value=s;state.append(option)}state.value=task.status;state.setAttribute('aria-label',task.title+' durumu');state.addEventListener('change',()=>{task.status=state.value;saveProjects();renderProjects()});
