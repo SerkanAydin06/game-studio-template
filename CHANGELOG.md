@@ -1,5 +1,8 @@
 # Çekirdek değişiklikleri
 
+## Yayınlanmamış
+docs/INDEX.md doküman haritası eklendi; START_HERE.md bağlantı verir.
+
 ## 3.3.0
 Kullanıcının tercihiyle yeni oyunlar public varsayılır. Başlangıç paketi oyuna ait
 standart runner CI içerir; export elle seçilir. Mevcut oyunlar otomatik değiştirilmez.
