@@ -133,7 +133,7 @@ async function showGitHubTasks(repoName,target,force=false){
   summary.textContent='Issue: '+openIssues.length+' açık / '+(issues.length-openIssues.length)+' kapalı · PR: '+openPrs.length+' açık / '+merged.length+' birleşti / '+(pulls.length-openPrs.length-merged.length)+' kapalı (son 50 kayıt)';
   target.append(summary);
   const latestMerged=pulls.find(pr=>pr.merged_at);const latestSuccessful=latestMerged&&runs.some(run=>run.head_sha===latestMerged.merge_commit_sha&&run.status==='completed'&&run.conclusion==='success');
-  const linkedIssue=latestMerged&&issues.find(i=>i.state==='closed'&&new RegExp('(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\\\\s+#'+i.number+'\\\\b','i').test(latestMerged.body||''));
+  const linkedIssue=latestMerged&&issues.find(i=>i.state==='closed'&&new RegExp('(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\\s+#'+i.number+'\\b','i').test(latestMerged.body||''));
   const signal=document.createElement('p');signal.className=linkedIssue&&latestSuccessful?'status-ok':'muted';
   signal.textContent=linkedIssue&&latestSuccessful?'Patron, iş tamamlandı. · GitHub Issue kapalı, PR birleşti ve ilgili CI başarılı. Görsel/F5 onayı gerekiyorsa ayrıca kontrol edilmeli.':!latestMerged?'Bekliyor · Henüz birleştirilmiş PR yok.':!latestSuccessful?'Kontrol bekliyor · PR birleşmiş; ilgili commit için başarılı CI doğrulanamadı.':'Kontrol bekliyor · PR ve CI tamam; bağlı Issue kapanışı veya kullanıcı onayı gerekli.';
   target.append(signal);
