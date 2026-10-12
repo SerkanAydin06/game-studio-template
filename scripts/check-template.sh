@@ -19,6 +19,8 @@ done
 [[ "$(head -n 1 ASSETS.csv | tr -d '\r')" == "id,path_or_url,source,license_reference,approved,reuse_notes" ]] || { echo "FAIL: ASSETS.csv header" >&2; exit 1; }
 [[ "$(head -n 1 USAGE.csv | tr -d '\r')" == "date,task,provider,unit,before,after,measurement_source,completed_result" ]] || { echo "FAIL: USAGE.csv header" >&2; exit 1; }
 grep -q 'id="make-brief"' control-panel/index.html || { echo "FAIL: control panel new game UI missing" >&2; exit 1; }
+grep -q 'id="projects-list"' control-panel/index.html || { echo "FAIL: project tracking UI missing" >&2; exit 1; }
+grep -q "pardex.projectTracker.v1" control-panel/index.html || { echo "FAIL: project storage missing" >&2; exit 1; }
 grep -q 'id="make-task"' control-panel/index.html || { echo "FAIL: control panel task UI missing" >&2; exit 1; }
 grep -q 'id="run-list"' control-panel/index.html || { echo "FAIL: control panel CI UI missing" >&2; exit 1; }
 echo "PASS: template documents, panel structure and headers only. Browser interaction and Godot/runtime tests NOT performed."
