@@ -1,3 +1,4 @@
+# Public core CI: validates only this repository; never fetch private game sources.
 name: Godot validation
 on:
   push:

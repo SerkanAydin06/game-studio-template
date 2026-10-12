@@ -10,7 +10,7 @@ and versioned core snapshots, not automatic overwrites.
 Historical GitHub engine/import/smoke/export and template checks passed on commit 24dd728.
 Validated v3 locally: manual-only YAML, template checks, separate starter and provenance,
 overwrite/nested/dirty-core refusal, real engine import/smoke in core and generated game.
-Details: docs/DOGRULAMA.md. Actions not run for v3; user-PC checks still pending.
+Details: docs/DOGRULAMA.md. Initial public CI verification in progress; user-PC checks still pending.
 ChatGPT is the single coordinator; START_HERE.md routes fresh sessions.
 User relays filled task packets; game COORDINATOR.md persists this workflow.
 Repository creation/writing uses actual available permissions with explicit manual fallback.
@@ -21,5 +21,5 @@ General improvement is allowed only through a separate core change with evidence
 Game-specific customization stays in game repositories. Skills/agents are selected by capability,
 need and measured outcomes; no background self-update service is installed.
 
-Core automatic checks skip private repositories; visibility change must be verified separately.
+Core automatic checks skip private repositories; public visibility verified on 2026-10-12.
 Game workflows remain opt-in. Exports remain manual.
