@@ -258,7 +258,7 @@ async function autoSyncProjects(force=false){
   const response=await fetch(url,{cache:force?'no-store':'default'});
   if(!response.ok)throw Error('GAMES.txt okunamadı (HTTP '+response.status+')');
   const data=await response.text();
-  const names=[...new Set(data.split(/\\r?\\n/).map(x=>x.trim()).filter(x=>x&&!x.startsWith('#')).map(validRepo).filter(Boolean))].slice(0,100);
+  const names=[...new Set(data.split(/\r?\n/).map(x=>x.trim()).filter(x=>x&&!x.startsWith('#')).map(validRepo).filter(Boolean))].slice(0,100);
   let added=0;
   for(const name of names){if(projects.some(p=>p.repo.toLowerCase()===name.toLowerCase()))continue;
    if(projects.length>=100)break;
