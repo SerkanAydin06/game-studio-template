@@ -17,7 +17,7 @@ Süreci ChatGPT yönetir. Diğer araçlara yalnız gereken hazır görev metnini
 - [En az kota ile görev dağılımı](docs/VERIMLILIK.md)
 - [Varlık, kalite ve test kuralları](docs/URETIM-KALITESI.md)
 - [Görev ve hata aktarımı](docs/GOREV-AKISI.md)
-- [GitHub Actions: yalnız istek üzerine](docs/GITHUB-ACTIONS.md)
+- [GitHub Actions: public çekirdek kontrolleri](docs/GITHUB-ACTIONS.md)
 
 ## Genel gelişim ve sınırlar
 - [Araç, skill ve agent seçimi](docs/ARAC-SKILL-AGENT.md)
@@ -48,7 +48,10 @@ Abonelik kotaları ayrıdır; ücretli API otomasyonu bu çekirdekte yoktur.
 Oyunun STATE/TASK, tasarımı, test notları ve varlık listesi kendi deposunda bulunur.
 
 ## Actions
-İki workflow da yalnız elle çalışır; push, PR ve zamanlayıcı tetiklemesi yoktur.
+Public çekirdekte main push/PR şablon kontrolleri otomatik çalışır.
+Godot kontrolü yalnız ilgili dosyalar değiştiğinde çalışır. Depo private ise otomatik işler atlanır.
+Görünürlük değişikliği tek başına çalışma başlatmaz; ilk kontrol elle başlatılabilir.
+Oyun depolarına workflow kopyalanmaz; onların görünürlüğü ayrı karardır.
 Godot kontrolünde Windows export varsayılan kapalıdır. Kullanıcı istediğinde açılır.
 Günlük geliştirme kontrolü AI'nın cloud ortamında, görsel/oynanış testi kullanıcının Godot'unda.
 Önceki GitHub Godot import/smoke/export ve şablon kontrolleri başarıyla doğrulandı:
