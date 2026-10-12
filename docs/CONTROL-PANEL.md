@@ -36,3 +36,6 @@ Statik dosya varlığı ve panel sürümünün CORE_VERSION ile aynı olması `s
 
 ## Önceki panelden taşınan işlevler
 Görev sonucunu commit/PR bağlantısıyla kaydetme ve USAGE.csv biçiminde gerçek tüketim kaydetme bu sürümde yereldir. Önceki hesapla eşitlenen bulut veri alanı taşınmadı; güvenli hesap doğrulaması olmadan istemciye gizli yetki anahtarı eklenmez.
+
+## GitHub görev takibi (yarı otomatik)
+Proje kartındaki **GitHub Issues / PR görevlerini getir** düğmesi, yalnız public oyun deposundaki son 50 Issue ve 50 PR kaydını salt-okunur getirir. Açık/kapalı durumunu, birleştirilmiş PR'ları ve PR açıklamalarındaki `fixes #123` benzeri kapanış referanslarını gösterir. İstekler kullanıcı tetiklemelidir; 10 dakika önbelleğe alınır. Veriler GitHub API hız limitine tabidir. Tamamlanma onayı, görsel inceleme ve AI kaynak tüketimi otomatik değildir. Büyük depolarda sonuçlar kısmi olabilir. Yeni görev açmak ve onaylamak için GitHub bağlantısını kullanın; gizli token girilmez.
