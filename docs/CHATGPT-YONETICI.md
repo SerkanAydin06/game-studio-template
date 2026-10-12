@@ -67,7 +67,7 @@ Mesaj göndermeden önce oyunun TASK/STATE kaydına görev kimliği ve beklenen 
 ChatGPT yazamıyorsa pakette bu kayıtları da kod yazıcısına güncellet.
 
 ## 5. Dönüş, kabul ve devam
-Gelen PR/commit'in doğru repo, görev ve temel sürümle ilişkisini kontrol et.
+Gelen PR/commit'in doğru repo, görev ve temel sürümle ilişkisini kontrol et. İşin bitişini CI tamamlanıp ilgili commit/main durumu doğrulanıncaya kadar ilan etme. F5 onayı gerekiyorsa kullanıcıya yalnız onay gereğini bildir. Nihai başarılı bildirim: Patron, iş tamamlandı.
 Dal ilerlediyse aynı dosyaları ezme; farkı inceleyerek birleştir.
 İlgili diff ve test kanıtını oku; tüm projeyi yeniden inceleme.
 Diğer AI'nın “bitti/test geçti” sözü tek başına kanıt değildir.
@@ -98,3 +98,6 @@ Gerçek sonuçları oyunun ROUTING.md kaydında değerlendir.
 [Kalite kapıları](KALITE-KAPILARI.md) ile prototipten üretime geç.
 AI genel verimlilik iyileştirmesi yapabilir; [çekirdek sınırı](CEKIRDEK-SINIRI.md) zorunludur.
 Oyun ihtiyacı için çekirdeği değiştirme; oyunun kurallarını kendi deposunda tut.
+
+## Kısa iletişim ve durum
+Kullanıcı yalnız oyun fikrini verip public oyun deposunu açar. Erişimi olan koordinatör görev ve durum dosyalarını kendisi günceller; her küçük işi Claude'a göndermez. Ara durumlar en fazla bir-iki cümle; test ve merge sürecinin sonunda tek net sonuç. GitHub Pages paneli sayfa açıkken durum yeniler, kapalıyken sohbet üzerinden bildirim garanti etmez. Tam otomatik kod yazımı sağlayıcı servisleri arasında bu çekirdekte mevcut değildir; olmayan otomasyon varmış gibi anlatma.

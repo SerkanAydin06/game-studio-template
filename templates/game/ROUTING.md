@@ -1,7 +1,7 @@
 # Görev yönlendirme ve öğrenme
 ChatGPT tek koordinatör; görev başına tek yazıcı. Bu kayıt yalnız bu oyun içindir.
 Önce mevcut araç/betik/varlık; ardından gerekli erişimi olan en az aktarım gerektiren araç.
-Claude Code/Codex kod için, ChatGPT/Gemini araştırma veya görsel değerlendirme için,
+ChatGPT/Codex varsayılan kod işleri için; Claude Code yalnız ağır mimari veya son kritik inceleme için, ChatGPT/Gemini araştırma veya görsel değerlendirme için,
 Meshy yalnız gerekli 3D üretim için adaydır. Roller kesin kalite sıralaması değildir.
 Oturumdaki uygun skill'i oku; kurulu veya yetkili varsayma.
 Bağımsız büyük işler varsa ve oturum kuralları izin verirse en fazla iki alt agent;
@@ -13,8 +13,8 @@ Bilinen kota sınırını kullan; bilinmiyorsa uydurma. Ücretli API fallback yo
 | İş | Birincil | Yedek |
 |---|---|---|
 | Kapsam, plan, görev paketi, kabul | ChatGPT | Kullanıcı paketi doğrudan Claude'a verir |
-| Kod + test (kilometre taşı, özellik) | Claude Code | Codex |
-| F5 hata düzeltme (test-önce) | Kodu yazan oturum | Yeni Claude oturumu |
+| Kod + test (kilometre taşı, özellik) | Codex (Godot ortamı doğrulanırsa) | Claude Code yalnız ağır/zor işte |
+| F5 hata düzeltme (test-önce) | Kodu yazan oturum | Codex/Claude zorluğa göre |
 | Görsel stil, 2D referans/varlık | CC0 paket, sonra Gemini | ChatGPT görsel |
 | 3D varlık | CC0 paket, sonra Meshy Image to 3D | Geçici şekil |
 | Görsel/oynanış kontrolü | Kullanıcı F5 | — |
