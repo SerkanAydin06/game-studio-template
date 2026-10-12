@@ -5,14 +5,7 @@ ChatGPT tek koordinatördür; kullanıcı hazır görevleri ve sonuçları taş�
 Ayrıntı: [yönetici akışı](CHATGPT-YONETICI.md).
 
 ## Görev yönlendirme
-| İş | Varsayılan | Ne zaman diğer araç? |
-|---|---|---|
-| Kod ve ilgili test | Küçük işte mevcut ChatGPT/Codex; kapsamlı görevde Claude Code | Devir maliyeti veya mevcut kota bunu gerektiriyorsa |
-| Tasarım/teknik karar | ChatGPT | Belirsiz güncel bilgi varsa Gemini araştırması |
-| Görsel/arayüz değerlendirmesi | Tek seçilmiş görsel yetenekli araç | Gerçek karşılaştırma ihtiyacı varsa ikinci görüş |
-| 3D üretim | Meshy | Önce mevcut model; referans gerekiyorsa tek görsel aracı |
-| Dosya sayımı, arama, log süzme | Betik/terminal | Yalnız yorum gerektiren sonucu AI değerlendirir |
-
+Aşamaya göre araç seçimi tek yerde: [GOREV-DAGILIMI.md](GOREV-DAGILIMI.md).
 Bu roller katı engel değildir; işi başlayan araç tamamlayabiliyorsa gereksiz devretmeyin.
 Mevcut oturum bağlamı işe yarıyorsa koruyun. İlgisiz yeni göreve kısa devir notuyla başlayın.
 Ana talimatları kısa tutun; kapsamı, ilgili dosyaları ve kabul ölçütünü baştan belirtin.

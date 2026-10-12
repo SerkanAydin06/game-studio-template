@@ -6,6 +6,8 @@ proje silinince kayıtların da silinmesi, kanıtsız "Tamamlandı" uyarısı, w
 10 dk API önbelleği, okunacak dosya listesi/deneme sınırlı görev paketi ve F5 hata paketi.
 Oyun başlangıcı: game/tests/test_*.gd otomatik test çalıştırıcısı; tüm script/sahne derleme kontrolü;
 ekran ölçekleme (canvas_items/expand); tipli GDScript uyarısı; testler export dışında.
+Görev dağılımı tek kaynakta (docs/GOREV-DAGILIMI.md): aşamaya göre birincil/yedek araç,
+koordinatör kodu yazmaz, hatayı kodu yazan oturum düzeltir, varsayılan ikinci inceleme yok.
 Belgeler: kota tasarrufu kuralları, ücretsiz CC0 varlık önceliği, test-önce hata düzeltme.
 Pages workflow action'ları SHA ile sabitlendi; README/panel sürümü CORE_VERSION ile denetlenir.
 docs/INDEX.md doküman haritası eklendi. Mevcut oyunlara otomatik uygulanmaz;
