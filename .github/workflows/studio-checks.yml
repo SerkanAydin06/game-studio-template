@@ -1,5 +1,9 @@
 name: Studio template checks
 on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -8,6 +12,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   template:
+    if: github.event_name == 'workflow_dispatch' || github.event.repository.private == false
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
@@ -16,4 +21,6 @@ jobs:
         with:
           persist-credentials: false
       - name: Check template documents
-        run: bash scripts/check-template.sh
+        run: |
+          bash scripts/check-template.sh
+          bash scripts/test-starter.sh

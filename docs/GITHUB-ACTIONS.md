@@ -1,38 +1,38 @@
-# Actions: istek üzerine
-GitHub Pro kullanımı kullanıcı tarafından onaylandı; kota sınırsız varsayılmaz.
-Her iki workflow yalnız workflow_dispatch ile çalışır. Commit/push/PR/cron çalıştırmaz.
+# Actions: public çekirdek
+Bu politika çekirdek için önceki “yalnız elle” notlarının yerini alır.
+Standart ubuntu-latest runner kullanılır. Public depoda standart runner dakika kullanımı
+ücretsizdir; private depoların kullanımı plan kotasına tabidir. Larger runner kullanılmaz.
+Kaynak: https://docs.github.com/en/billing/concepts/product-billing/github-actions
 
-## Günlük akış
-Claude/Codex cloud ortamında ilgili betikleri çalıştırır; kullanıcı Godot'ta F5 ile dener.
-Actions bağımsız doğrulama gerektiğinde kullanılacak. Bu komutlarda AI/API çağrısı yoktur;
-AI'nın komutları yönetmesi kendi abonelik kullanımına, Actions ise ayrı dakika kotasına tabidir.
+## Otomatik kontroller
+- main push ve main'e PR: şablon belgeleri ve bağımsız başlangıç kontrolü.
+- Godot/senaryo/script/motor/workflow dosyası değişirse import ve smoke kontrolü.
+- Job koşulu otomatik çalışmaları yalnız public depoda açar. Private depoda job atlanır.
+- workflow_dispatch private depoda da çalışabilir ve kota kullanabilir.
+- Cron veya AI/API çağrısı yoktur; read-only izin, sabit action sürümü ve timeout korunur.
+- Fork PR'leri normal pull_request kullanır; pull_request_target veya secret erişimi yoktur.
+- GitHub dış katkı çalışmaları için ayrıca onay isteyebilir; otomatik izin genişletme yapılmaz.
+- Godot başlatıcının bulut testi kullanıcı bilgisayarındaki görsel testi karşılamaz.
 
-## Elle kontrol
-Actions > Studio template checks > Run workflow: ortak dosya ve durum boyutu kontrolü.
-Actions > Godot validation > Run workflow:
-- export_windows işaretlenmezse yalnız motor import ve smoke testi.
-- export_windows özellikle işaretlenirse Windows template indirilir, exe üretilir.
-- Çıktı studio-windows-check adıyla bir gün saklanır; günlük Godot denemesi için gerekmez.
-İşler read-only yetki, sabit action commit'i, timeout ve eski aynı-dal işini iptal kullanır.
-Doküman düzenlemek yeni iş başlatmaz. Yeni oyunlara workflow otomatik kopyalanmaz.
+## Public yapma ve ilk kontrol
+Settings > General > Danger Zone > Change repository visibility > Make public.
+Bu işlem çekirdeğin dosya ve geçmişini herkese görünür yapar; oyun depoları değişmez.
+Bağlantı/API üzerinde private:false doğrulanmadan görünürlüğün değiştiğini söyleme.
+Görünürlük değişikliği push değildir. Sonrasında Actions > Studio template checks >
+Run workflow ve Godot validation > Run workflow ile ilk kontrol yapılabilir.
 
-## Cloud kontrolleri
+## Export
+Windows export sadece elle çalıştırmada export_windows seçilirse üretilir.
+Normal push/PR executable veya artifact üretmez. İsteğe bağlı artifact bir gün tutulur.
+Günlük deneme Godot'ta F5'tir.
+
+## Ayrı oyunlar
+Yeni oyun başlangıcına .github kopyalanmaz. Çekirdeği public yapmak private oyunun
+Actions kullanımını ücretsiz yapmaz. Oyun CI/görünürlük kararı ayrı görevdir.
+Private oyun içeriğini ücretsiz çalıştırmak için public çekirdeğe taşımayın.
+
+## Yerel/cloud kontrol
 bash scripts/check-template.sh
+bash scripts/test-starter.sh
 bash scripts/godot-install.sh
 bash scripts/godot-check.sh
-Son ikisi çekirdekte validation/, oluşturulan oyun deposunda game/ projesini kullanır.
-.godot-project yolu ve .godot-version motor sürümü bunu belirler.
-İndirici doğrulanmış yerel arşivi tekrar kullanır; gerekmedikçe yeniden indirmez.
-Export özellikle istendiğinde:
-bash scripts/godot-install.sh --templates
-bash scripts/godot-check.sh --export
-
-## Kanıt ve sınır
-Godot 4.5.1 başlangıç motorudur; tüm eski oyunları bu sürüme geçirmez.
-Önceki GitHub import/smoke/Windows export çalışması başarılı:
-https://github.com/SerkanAydin06/game-studio-template/actions/runs/38245824512
-Şablon kontrolü:
-https://github.com/SerkanAydin06/game-studio-template/actions/runs/38245824412
-Başarı yalnız o commit'e aittir. Gerçek Windows/görsel test ayrıca yapılır.
-Kota bakiyesi sağlayıcı panelinde kontrol edilir; bu depo otomatik bakiye okuyamaz.
-Kaynak: https://docs.github.com/en/actions/how-tos/manage-workflow-runs/manually-run-a-workflow

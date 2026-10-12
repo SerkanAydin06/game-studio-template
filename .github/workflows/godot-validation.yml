@@ -1,5 +1,21 @@
 name: Godot validation
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'validation/**'
+      - 'templates/game/game/**'
+      - 'scripts/**'
+      - '.godot-*'
+      - '.github/workflows/godot-validation.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'validation/**'
+      - 'templates/game/game/**'
+      - 'scripts/**'
+      - '.godot-*'
+      - '.github/workflows/godot-validation.yml'
   workflow_dispatch:
     inputs:
       export_windows:
@@ -14,6 +30,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   validate:
+    if: github.event_name == 'workflow_dispatch' || github.event.repository.private == false
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:

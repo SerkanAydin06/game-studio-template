@@ -3,7 +3,7 @@ Core: 3.2.0; reusable shared workflow, not a game.
 Repo: SerkanAydin06/game-studio-template.
 Tools: Gemini Pro web, Claude Code web, ChatGPT Pro/Codex, Meshy Pro. No Copilot.
 User tests source projects in Godot on multiple PCs; no Python/AI CLI prerequisite.
-Policy: one primary writer, short task context, local/cloud checks, manual-only Actions,
+Policy: one primary writer, short task context, local/cloud checks, public-only automatic core Actions,
 Windows export off by default, no automatic paid API/asset generation.
 Architecture: core docs/scripts + separate game starter; games have independent private repos
 and versioned core snapshots, not automatic overwrites.
@@ -20,3 +20,6 @@ Actual account quotas and individual service connections are not auto-verified.
 General improvement is allowed only through a separate core change with evidence and rollback.
 Game-specific customization stays in game repositories. Skills/agents are selected by capability,
 need and measured outcomes; no background self-update service is installed.
+
+Core automatic checks skip private repositories; visibility change must be verified separately.
+Game workflows remain opt-in. Exports remain manual.
