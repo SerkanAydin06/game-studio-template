@@ -1,0 +1,3 @@
+Bu depoyu tüm oyunlarımızda kullanılacak düşük tüketimli, web tabanlı geliştirme şablonu olarak kuruyoruz. Önce CLAUDE.md, AGENTS.md, STATE.md ve TASK.md dosyalarını oku. Oyun geliştirme.
+
+Ortamda hangi araçların gerçekten bulunduğunu kısa komutlarla kontrol et; anahtarları veya ortam değişkenlerinin değerlerini yazdırma. Mevcut dalı belirle. Godot yoksa bunu açıkça kaydet; test geçti deme. Talimatlarda çelişki varsa düzelt, STATE.md'yi gerçek durumla güncelle. Değişiklikleri görev dalına commit et ve mümkünse PR oluştur. Otomatik tekrar eden AI işleri, agent ekibi, ücretli API veya varlık üretimi başlatma. Kısa sonuç ve bir sonraki gerekli kurulum adımını ver.
