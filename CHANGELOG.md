@@ -1,5 +1,10 @@
 # Çekirdek değişiklikleri
 
+## 3.2.1
+Public CI ayrı oluşturulan oyun başlangıcını aynı motorla doğrular. Koordinatör ve
+yönlendirme dosyaları zorunlu kontrole alındı. İlk giriş/durum belgeleri güncellendi.
+Yeni özellik/mekanik yok; mevcut oyunlara otomatik güncelleme yok.
+
 ## 3.2.0
 Genel iyileştirme sınırı, kanıta göre araç/skill/agent seçimi, oyun ROUTING.md kaydı
 ve üretim kalite kapıları. Motor/oyun kodu değişmedi; mevcut oyunlara otomatik uygulanmaz.

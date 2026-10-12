@@ -57,6 +57,8 @@ jobs:
           else
             bash scripts/godot-check.sh
           fi
+      - name: Validate generated standalone game
+        run: bash scripts/test-starter.sh --godot
       - name: Optional Windows download
         if: ${{ inputs.export_windows }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

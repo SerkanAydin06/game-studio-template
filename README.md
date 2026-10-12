@@ -1,4 +1,4 @@
-# Oyun üretim çekirdeği — 3.2.0
+# Oyun üretim çekirdeği — 3.2.1
 Bu depo ortak çalışma kuralları, araç rehberleri ve yeni proje başlangıcıdır.
 **Oyun kodu ve oyuna özel üretim ayrı özel depoda geliştirilir.**
 Araçlar: Gemini Pro, Claude Code web, ChatGPT Pro/Codex ve Meshy Pro. Copilot kullanılmaz.
@@ -49,7 +49,8 @@ Oyunun STATE/TASK, tasarımı, test notları ve varlık listesi kendi deposunda 
 
 ## Actions
 Public çekirdekte main push/PR şablon kontrolleri otomatik çalışır.
-Godot kontrolü yalnız ilgili dosyalar değiştiğinde çalışır. Depo private ise otomatik işler atlanır.
+Godot kontrolü yalnız ilgili dosyalar değiştiğinde çalışır; çekirdek sahnesini ve
+ayrı üretilen oyun başlangıcını aynı doğrulanmış motorla import/smoke testinden geçirir. Depo private ise otomatik işler atlanır.
 Görünürlük değişikliği tek başına çalışma başlatmaz; ilk kontrol elle başlatılabilir.
 Oyun depolarına workflow kopyalanmaz; onların görünürlüğü ayrı karardır.
 Godot kontrolünde Windows export varsayılan kapalıdır. Kullanıcı istediğinde açılır.
