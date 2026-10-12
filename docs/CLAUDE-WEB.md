@@ -26,3 +26,9 @@ Bulut görevleri abonelik kullanımına dahildir; dizüstünün açık kalması 
 Başarılı kurulum kanıtı: depo okunur; gerçek bir değişiklik görev dalında görünür;
 hangi kontrolün gerçekten çalıştığı raporlanır. Henüz bu hesapta doğrulanmadı.
 Kaynak: https://code.claude.com/docs/en/claude-code-on-the-web
+
+## Çekirdek / oyun ayrımı ve kota
+Bu depo ortak çekirdektir. Gerçek oyun görevi için ayrı oyun deposunu ve doğru dalı kullan.
+Yalnız ilgili dosyaları yükle; bütün rehberleri her sohbete ekleme. Copilot kullanılmaz.
+Günlük deneme kaynak projeyle Godot'ta F5; Actions ve exe üretimi otomatik başlatılmaz.
+Ortak kurallar: [verimlilik](VERIMLILIK.md), [görev devri](GOREV-AKISI.md).

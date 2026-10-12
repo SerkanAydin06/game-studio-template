@@ -1,13 +1,12 @@
-name: Godot validation and Windows build
+name: Godot validation
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.godot-version'
-      - 'validation/**'
-      - 'scripts/godot-*.sh'
-      - '.github/workflows/godot-validation.yml'
+    inputs:
+      export_windows:
+        description: 'Also export a Windows executable (not needed for Godot editor testing)'
+        type: boolean
+        default: false
+        required: false
 permissions:
   contents: read
 concurrency:
@@ -22,11 +21,26 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           persist-credentials: false
-      - name: Install pinned Godot and Windows template
-        run: bash scripts/godot-install.sh --templates
-      - name: Import, smoke test and export
-        run: bash scripts/godot-check.sh --export
-      - name: Downloadable Windows check
+      - name: Install verified engine
+        env:
+          EXPORT_WINDOWS: ${{ inputs.export_windows }}
+        run: |
+          if [[ "$EXPORT_WINDOWS" == true ]]; then
+            bash scripts/godot-install.sh --templates
+          else
+            bash scripts/godot-install.sh
+          fi
+      - name: Import and smoke test
+        env:
+          EXPORT_WINDOWS: ${{ inputs.export_windows }}
+        run: |
+          if [[ "$EXPORT_WINDOWS" == true ]]; then
+            bash scripts/godot-check.sh --export
+          else
+            bash scripts/godot-check.sh
+          fi
+      - name: Optional Windows download
+        if: ${{ inputs.export_windows }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: studio-windows-check

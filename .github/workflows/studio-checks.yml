@@ -1,14 +1,6 @@
 name: Studio template checks
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '*.md'
-      - '*.csv'
-      - 'docs/**'
-      - 'scripts/check-template.sh'
-      - '.github/workflows/studio-checks.yml'
 permissions:
   contents: read
 concurrency:

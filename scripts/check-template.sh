@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
-for path in README.md CLAUDE.md AGENTS.md STATE.md TASK.md ASSETS.csv USAGE.csv docs/KURULUM.md docs/CLAUDE-WEB.md docs/CHATGPT-CODEX.md docs/GEMINI-WEB.md docs/MESHY-WEB.md docs/GITHUB-ACTIONS.md; do
+for path in CORE_VERSION .godot-project .godot-version README.md CLAUDE.md AGENTS.md STATE.md TASK.md ASSETS.csv USAGE.csv docs/KURULUM.md docs/CLAUDE-WEB.md docs/CHATGPT-CODEX.md docs/GEMINI-WEB.md docs/MESHY-WEB.md docs/GITHUB-ACTIONS.md docs/YENI-OYUN.md docs/GODOT-YEREL.md docs/VERIMLILIK.md docs/GOREV-AKISI.md docs/URETIM-KALITESI.md templates/game/AGENTS.md templates/game/game/project.godot scripts/new-game.sh; do
   if [[ ! -s "$path" ]]; then
     echo "FAIL: missing or empty file: $path" >&2
     exit 1

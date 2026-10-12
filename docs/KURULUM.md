@@ -1,27 +1,27 @@
-# Web stüdyosu: kurulum ve kullanım
-Bu rehberler tarayıcıdan kullanım içindir. Kullanıcının bilgisayarına Python veya AI CLI kurulmaz.
-Mevcut depo: SerkanAydin06/game-studio-template. Bir araçta bağlantı açılması diğer araçları bağlamaz.
-Hesap oturumları kullanıcı tarafından ilgili sağlayıcıda açılır.
+# Kurulum merkezi
+Mevcut ana depo SerkanAydin06/game-studio-template'dir. Yeniden oluşturmayın.
+Bu çekirdeği her oyunun deposu olarak kullanmayın; [ayrı depo akışını](YENI-OYUN.md) izleyin.
 
-## Sıra
-1. [Claude Code](CLAUDE-WEB.md): ana geliştirici ve repo bağlantısı.
-2. [ChatGPT / Codex](CHATGPT-CODEX.md): teknik karar, gerektiğinde bağımsız inceleme.
-3. [Gemini](GEMINI-WEB.md): araştırma veya görsel inceleme gerektiğinde.
-4. [Meshy](MESHY-WEB.md): model gerektiğinde; kurulum için kredi harcamayın.
-5. [GitHub Actions](GITHUB-ACTIONS.md): AI çağrısı içermeyen kontrol altyapısı.
+## Hesapları bir kez bağla
+1. [Claude Code web](CLAUDE-WEB.md): ana geliştirici; doğru depo erişimi ve dalı.
+2. [ChatGPT/Codex](CHATGPT-CODEX.md): ihtiyaç olduğunda inceleme veya görev devri.
+3. [Gemini Pro web](GEMINI-WEB.md): gerekli dosyaları/ilgili repo sürümünü içe aktar.
+4. [Meshy Pro web](MESHY-WEB.md): mevcut hesabı aç; bağlantı denemesi için model üretme.
+Aynı hesapla farklı PC'den giriş yapılabilir. Her sağlayıcının repo izinleri ayrıdır.
+Bir yeni oyun deposu açılınca onu da gereken araçlara ayrıca tanıtın.
+Hesap bağlantıları ve varsa ek kullanım ayarları kullanıcı arayüzünde doğrulanmalıdır;
+bu metinler erişim veya harcama limiti oluşturmaz. Copilot iptal edildi, kullanılmaz.
 
-## Ortak çalışma
-Her oyun ayrı özel depodan ilerler. GitHub ayarlarında bu depoyu Template repository olarak
-işaretleyip yeni oyun için Use this template kullanabilirsiniz; bu ayar burada değiştirilmedi.
-Şablondaki sonraki değişiklikler eski oyunlara otomatik aktarılmaz.
-Görev verirken hedef depo/dal, tek amaç, ilgili dosyalar ve kabul ölçütünü belirtin.
-Bir görevde tek ana geliştirici kullanın. Diğer araca geçerken STATE.md ve TASK.md ile ilgili
-diff/test özetini aktarın. Aynı işi dört modele yeniden yaptırmayın.
-Yeni PC'de aynı web hesabını ve mevcut oturumu açın. Main'e birleşmemiş çalışmayı kaybetmemek
-için dal/PR bağlantısını koruyun. Godot veya oyun paketi sadece oynama testi yapılan PC'de gerekir.
+## Bilgisayarda
+Godot ve tercihen GitHub Desktop yeterlidir; [yerel rehber](GODOT-YEREL.md).
+AI'lar webde çalışır. Python/AI CLI kurmak gerekmez.
+Çekirdekteki Bash betiklerini kullanıcı Windows terminalinde çalıştırmaz;
+Claude/Codex'in Linux cloud ortamı kullanır.
 
-## Durum
-GitHub dosyaları doğrulandı. Diğer servislerdeki kişisel bağlantılar bu sohbetten kurulmuş sayılmaz.
-Kullanıcı GitHub Pro'ya geçip Actions kullanımını onayladı. Şablon kontrolü ve Godot/Windows
-export iş akışları eklendi. Çalıştırma durumunu Actions sekmesinden doğrulayın; gerçek Windows
-PC testi ayrıca yapılmalı.
+## Kurulumun bitmiş sayılması
+- Ana çekirdek kuralları ve testleri doğrulanmış.
+- Oyun açılınca kendi deposunda kısa durum/görev, motor sürümü ve kontroller bulunuyor.
+- Kaynak proje bir PC'de Godot ile açılıyor; ikinci PC güncel commit'ten devam edebiliyor.
+- İhtiyaç olduğunda her araç doğru sürümü okuyabiliyor.
+- Gerçek bağlantı veya oynanış testi yapılmadıysa “tamam” sayılmıyor.
+Şu an ortak altyapı hazır; gerçek oyun deposu ve kullanıcı PC testi henüz yok.
