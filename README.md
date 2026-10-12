@@ -2,8 +2,14 @@
 
 Bu paket Claude Code WEB ve GitHub üzerinden kullanılmak üzere hazırlanmıştır.
 Önceki Python paketinin yerine bu başlangıcı kullanın. Python/yerel AI CLI gerekmez.
-Henüz bir GitHub deposuna kurulmamıştır. Paket yalnız ortak talimatları ve iş akışını kurar;
-bulutta Godot test ortamı, Windows paketleme ve oyun mekaniği içermez.
+GitHub deposuna başlangıç dosyaları yüklendi. Paket ortak talimatları ve iş akışını kurar;
+Godot 4.5.1 altyapı doğrulaması ve Windows export akışı da içerir. Oyun mekaniği yoktur.
+
+## Ayrıntılı araç rehberleri
+
+[Kurulum merkezi](docs/KURULUM.md): Claude Code, ChatGPT/Codex, Gemini, Meshy ve GitHub Actions.
+Bu dal path filtreli Actions şablon kontrolü ve Godot/Windows export doğrulaması içerir.
+Çalıştırma durumu Actions sekmesinden doğrulanır; Windows PC testi ayrıca gerekir.
 
 ## Bir kez kurulum
 
@@ -46,12 +52,12 @@ STATE.md: güncel durum. TASK.md: tek aktif görev.
 ASSETS.csv: kaynak/lisans ve tekrar kullanım kaydı. USAGE.csv: gerçek kullanım ölçümleri.
 FIRST_TASK.txt: başlangıç görevi. Bu CSV'ler otomatik telemetri toplamaz.
 
-## Sonraki somut kurulum
+## Doğrulama ve sonraki adım
 
-Bulut ortamındaki araçları belirle; motor sürümünü sabitle; sınırlı bir doğrulama betiği kur;
-boş doğrulama projesiyle import, sahne açılışı ve Windows export dene. GitHub Actions gerekirse
-kullanım kotası incelenerek eklenir; ücretsiz/sınırsız varsayılmaz. Gerçek PC'de açılış testi yapılır.
-Oyun geliştirmesi bu doğrulamalardan sonra başlar.
+[Actions rehberini](docs/GITHUB-ACTIONS.md) izleyin. İlgili main değişiklikleri küçük bir
+doküman kontrolü veya Godot import/smoke/Windows export işi başlatır. Günlük cron yoktur.
+Gerçek Windows testinde indirilen StudioCheck.exe açılmalıdır. Sonra yeni oyunlar için
+bu başlangıcı ayrı depoya kopyalayabiliriz. Başka oyunların motor sürümünü değiştirmeyin.
 
 Kaynaklar (12 Ekim 2026 tarihinde kontrol edildi):
 https://code.claude.com/docs/en/claude-code-on-the-web

@@ -1,8 +1,7 @@
 # Active task
-Goal: establish a reusable web workflow.
-Scope: inspect these instruction files; confirm repository access; document actual environment.
-Acceptance: files at repo root; Claude reads shared rules; environment capabilities recorded;
-commit/branch or PR reference returned. No imaginary test pass.
-Exclusions: gameplay, asset generation, paid APIs, scheduled AI jobs and unrelated refactors.
-Next stage: choose and pin Godot version, then validate headless import/test/build support in cloud.
-Do not ask the user to install Python or local AI CLIs for this setup.
+Goal: validate and enable low-consumption Actions infrastructure.
+Scope: shared guides and template checks, pinned Godot installer, empty validation scene,
+smoke test and Windows export. User authorized Actions after upgrading to GitHub Pro.
+Acceptance: checks pass; workflows merged to main; GitHub run evidence recorded.
+Keep actual Windows runtime/visual validation separate from Linux export success.
+No gameplay, asset generation or paid AI API integration.

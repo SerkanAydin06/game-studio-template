@@ -1,0 +1,8 @@
+.tools/
+.local/
+builds/
+**/.godot/
+.env
+.env.*
+*.pem
+*.key
