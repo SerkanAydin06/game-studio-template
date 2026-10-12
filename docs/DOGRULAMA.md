@@ -1,8 +1,8 @@
 # Hazırlık denetimi — 12 Ekim 2026
 ## Doğrulanmış temel
 Public görünürlük ve 6ca3724 commit'inde Actions başarıları:
-- https://github.com/SerkanAydin06/game-studio-template/actions/runs/38254765256
-- https://github.com/SerkanAydin06/game-studio-template/actions/runs/38254765241
+- https://github.com/SerkanAydin06/pardex-uretici/actions/runs/38254765256
+- https://github.com/SerkanAydin06/pardex-uretici/actions/runs/38254765241
 Önceki 3.0.0 çalışma ortamı testlerinde ayrı başlangıç da gerçek Godot'ta doğrulandı.
 
 ## 3.2.1 denetimi

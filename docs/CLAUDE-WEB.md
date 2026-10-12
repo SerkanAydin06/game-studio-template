@@ -2,7 +2,7 @@
 ## Bir kez bağlantı
 1. https://claude.ai/code adresinde aboneliğin bulunan hesapla giriş yap.
 2. GitHub bağlantısı istendiğinde SerkanAydin06 hesabını seç ve Claude GitHub uygulamasına
-   game-studio-template deposu için erişim ver. Depo görünmüyorsa uygulamanın depo izinlerini kontrol et.
+   pardex-uretici deposu için erişim ver. Depo görünmüyorsa uygulamanın depo izinlerini kontrol et.
 3. Yeni görevde bu depoyu ve doğru başlangıç dalını seç.
 4. Bulut ortamı ekranı çıkarsa mevcut ortamı seç veya varsayılan ortamı oluştur.
    Bu bağlantı Godot'un kurulu olduğunu kanıtlamaz; ilk görevde kontrol ettir.

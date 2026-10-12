@@ -1,6 +1,6 @@
 # Current state
 Core: 3.2.1; reusable shared workflow, not a game.
-Repo: SerkanAydin06/game-studio-template; public verified 2026-10-12.
+Repo: SerkanAydin06/pardex-uretici; public verified 2026-10-12.
 ChatGPT coordinates; user relays ready task packets to Claude/Gemini/Meshy when useful.
 One writer, targeted context, measured routing, relevant available skills/bounded agents.
 Games have separate private repositories by default and independent versioned snapshots.
