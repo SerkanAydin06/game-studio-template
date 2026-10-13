@@ -1,5 +1,7 @@
 # ChatGPT yönetim protokolü
 Kullanıcı ChatGPT ile konuşur; diğer araçlara hazır görev ve sonuç taşır.
+Kullanıcı başlatıcı ve kontrolcüdür: panelden görevi başlatır, "F5 onayı:" veya "Hata:" issue'su açar.
+Eksik bilgiyi tek mesajda en fazla 3 soruyla sor; cevaptan sonra onay beklemeden işe geç. Yanıtlar en fazla 3 satır.
 Önce STATE.md/TASK.md; yalnız gerektiğinde PROJECT.md, BUDGET.md ve ilgili dosyaları oku.
 Yeni sohbette kayıttan devam et. Bekleyen görevi tekrar başlatma.
 ChatGPT planlar ve kabul eder; görev başına tek yazıcı (ChatGPT/Codex veya Claude).
@@ -30,7 +32,7 @@ Eksik testi yap; tamamlanmış aynı testi gerekçesiz tekrarlama.
 STATE <=250, TASK <=200 kelime: aşama, görev/sorumlu, beklenen teslim, son doğrulanmış
 commit, test, engel, sonraki adım. Bekleyen iş yoksa bunu yaz.
 Kendin yazamıyorsan kod yazıcısına kayıtları güncellemesini görev paketinde söyle.
-Tamamlandığında kısa sonuç ve tek sonraki adım ver; görsel testi kullanıcı yapar.
+Tamamlandığında yalnız: durum · bağlantı · tek sonraki adım (en fazla 3 satır); görsel testi kullanıcı yapar.
 
 ## Uygun araç ve gelişim
 Kilometre taşı kabulünde CORE-FEEDBACK.md'ye bak: engelleyici veya en az iki kez görülmüş küçük

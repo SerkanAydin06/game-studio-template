@@ -40,6 +40,12 @@ Görev sonucunu commit/PR bağlantısıyla kaydetme ve USAGE.csv biçiminde ger�
 ## GitHub görev takibi (yarı otomatik)
 Proje kartındaki **GitHub Issues / PR görevlerini getir** düğmesi, yalnız public oyun deposundaki son 50 Issue ve 50 PR kaydını salt-okunur getirir. Açık/kapalı durumunu, birleştirilmiş PR'ları ve PR açıklamalarındaki `fixes #123` benzeri kapanış referanslarını gösterir. İstekler kullanıcı tetiklemelidir; 10 dakika önbelleğe alınır. Veriler GitHub API hız limitine tabidir. Tamamlanma onayı, görsel inceleme ve AI kaynak tüketimi otomatik değildir. Büyük depolarda sonuçlar kısmi olabilir. Yeni görev açmak ve onaylamak için GitHub bağlantısını kullanın; gizli token girilmez.
 
+## Başlatıcı ve kontrolcü düğmeleri
+Oyun kartı aşama, aktif görev ve sonraki adımı oyunun STATE.md/TASK.md dosyalarından okur (public ham dosya; API kotası harcamaz).
+**▶ Sonraki görevi başlat** kısa görev metnini panoya kopyalar; ChatGPT/Codex'e yapıştırılır.
+**✔ F5 onayı ver** ve **✖ Hata bildir** oyun deposunda hazır doldurulmuş GitHub issue sayfasını açar (kendi GitHub oturumunla, token yok).
+Oyun AI'ları bu issue'ları görev başında okur: hata test-önce düzeltilir (PR'da Fixes #N), onay kabul kanıtı sayılır.
+
 ## Otomatik takip (kota harcamadan)
 Panel GAMES.txt listesindeki public oyun depolarını sayfa açılışında keşfeder ve eksik projeleri yerel listeye ekler. Kullanıcının sildiği proje bu tarayıcıda yok sayılır ve otomatik geri eklenmez; elle tekrar eklenirse takip yeniden başlar. Aynı anda yapılan aynı GitHub istekleri birleştirilir; anahtarsız API sınırı saatte 60 istektir, panel açıkken oyun başına yaklaşık 10 dakikada 3 istek yapılır. Sayfa açık ve görünürken 5 dakikada bir public GitHub API durumunu yeniler (API çağrıları önbelleğe alınır). Proje kartında açık/kapalı Issues, PR ve CI bilgisi bulunur. İşin teknik bitiş sinyali ancak ilgili Issue kapalı, onu kapatan PR birleşmiş ve aynı merge commit için GitHub Actions CI başarılıysa gösterilir. Gerekli Godot F5/görsel onayı teknik sinyalden ayrıdır. Panel sayfası kapalıyken yenileme veya ChatGPT sohbetine bildirim yapamaz. GAMES.txt kaydı olmayan proje kullanıcının manuel eklediği projeler arasında kalabilir; otomatik kayıt açma yazma yetkisi olan koordinatörün görev tanımıdır. GitHub API kota sınırları, private depolar ve CI eşleşmeyen PR'larda belirsiz durum açıkça gösterilir.
 
