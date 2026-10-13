@@ -27,3 +27,5 @@ Follow current user authorization for changes and merges. Do not repeatedly requ
 At handoff record result, actual tests, blockers, branch/PR and next action.
 Game repositories receive a versioned small starter via scripts/new-game.sh; no automatic core sync.
 Response style for every AI: max 3 lines (status · link · one next step). No explanations, summaries or option lists unless the user asks. Ask only blocking questions, all in one message (max 3), then start without waiting for "go".
+
+When delegating to another AI, provide its direct link, the repository, a fully copyable task prompt and the user's next step. Brevity rules do not truncate the task prompt.
