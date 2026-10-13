@@ -11,7 +11,7 @@ Yeni oyun istendiğinde adını ve hedef public depoyu belirleyin. Mevcut depoya
    Betik repo/hesap oluşturmaz, ağ çağrısı yapmaz veya push etmez.
    Hedef yoksa koordinatör mevcut oluşturma yetkisiyle public depo açar;
    yetkisi yoksa kullanıcıdan public boş depo açıp bağlantısını vermesini ister.
-   Yazma/ilk commit yetkisi yoksa kurulumu hazır görev paketiyle Claude Code'a devreder.
+   Yazma/ilk commit yetkisi yoksa kurulumu hazır görev paketiyle doğrulanmış Codex ortamına, uygun değilse Claude Code'a devreder.
 5. Ana geliştirici yalnız oyun deposunu seçer. Tam çekirdek rehberleri otomatik yüklenmez.
 6. Oyunun owner/repo adı çekirdeğin GAMES.txt dosyasına eklenir (öğrenme döngüsü toplayıcısı için).
 7. PROJECT.md ve BUDGET.md oyun kararı verildiğinde doldurulur. Başlangıç sahnesi yalnız boş iskelettir.
