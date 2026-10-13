@@ -5,6 +5,9 @@ actions/checkout v7.0.1 ve actions/upload-artifact v7.0.1 (Node 24) SHA ile sabi
 Node 20 kullanımdan kaldırma uyarısı giderildi. Oyun başlangıcının CI'sı da güncellendi.
 Panel: oyun kartında GitHub Issue/PR takibi (#20) çalışır hale getirildi; eksik showGitHubTasks
 yazıldı ve check-template.sh ile denetleniyor. GAMES.txt: SerkanAydin06/DenemeMario eklendi.
+Otomatik takip (#22–#24) düzeltmeleri: eşzamanlı aynı API istekleri birleştirildi (yüklemede oyun başına
+7 → 3 istek), silinen proje otomatik geri eklenmiyor, panel görev aracı ve çekirdek bakım paketi yeni
+görev dağılımına uyduruldu, GOREV-DAGILIMI.md'ye çekirdek iyileştirme ve kota dolunca bölümü geri eklendi.
 
 ## 3.5.0
 Öğrenme döngüsü: oyunlar çekirdek eksiklerini CORE-FEEDBACK.md'ye tek satırla yazar (ek AI turu yok);

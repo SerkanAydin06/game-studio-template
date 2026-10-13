@@ -18,6 +18,12 @@
 | 3D özel varlık | Meshy, ancak gerekliyse | Geçici varlık |
 | Test / derleme | GitHub Actions standart runner | Yerel Godot F5 |
 | Kritik teslim öncesi denetim | ChatGPT + CI; ihtiyaç varsa Claude kısa inceleme | Kullanıcı F5 |
+| Çekirdek iyileştirme (öğrenme döngüsü) | Kilometre taşı sonunda, ölçüte uyan CORE-FEEDBACK satırları için tek çekirdek PR: ChatGPT/Codex | Claude yalnız zor değişiklikte |
+
+## Kota dolunca
+- Kod: ChatGPT ↔ Codex; Claude yalnız zor işte. Devir STATE.md + TASK.md + açık PR ile, sohbet geçmişi taşınmaz.
+- Gemini/Meshy: beklet; mekanik geçici veya CC0 varlıkla ilerler. Ücretli API'ye geçilmez.
+- Çekirdekten kaynaklanan ek tur görülürse oyunun CORE-FEEDBACK.md dosyasına tek satır yazılır (docs/CEKIRDEK-SINIRI.md).
 
 ## Tek seferde tamamla
 - Önce güncel TASK/STATE ve ilgili dosyalar. Benzer küçük işleri tek işte topla; gereksiz devretme/tekrar inceleme yok.
