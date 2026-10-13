@@ -29,6 +29,8 @@
 - Önce güncel TASK/STATE ve ilgili dosyalar. Benzer küçük işleri tek işte topla; gereksiz devretme/tekrar inceleme yok.
 - Kod yazan oturum kod+test+düzeltmeyi üstlenir. PR açıklamasına ilgili Issue kapanış referansı (ör. Fixes #12) eklenir.
 - Otomasyon PR, test ve merge bilgilerini izler. PR merge ve CI başarıyla tamamlanmadan "Patron, iş tamamlandı." denmez. Kullanıcı F5 onayı gereken işlerde ayrıca onay beklenir.
+- Tüm AI yanıtları en fazla 3 satır; açıklama yalnız istenirse (çıktı tokenı da kotadır).
+- Kullanıcı panelden başlatır (▶), F5 onayı (✔) veya hata (✖) issue'su açar; AI bu issue'ları okuyup işler.
 - Ara durum mesajları kısa: "Çalışıyor", "Kontrol bekliyor", "Test başarısız". Başarılı teslimde yalnız "Patron, iş tamamlandı." + bağlantı + gerekirse tek sonraki adım.
 - Panel kod yazamaz, araçlar arası mesaj gönderemez veya arka planda sohbet sürdüremez. Sayfa açıkken GitHub salt-okunur durumunu yenileyebilir.
 

@@ -1,4 +1,4 @@
-# Pardex Üretici — oyun üretim çekirdeği — 3.5.0
+# Pardex Üretici — oyun üretim çekirdeği — 3.6.0
 Bu depo ortak çalışma kuralları, araç rehberleri ve yeni proje başlangıcıdır.
 **Oyun kodu ve oyuna özel üretim ayrı public depoda geliştirilir.**
 Araçlar: Gemini Pro, Claude Code web, ChatGPT Pro/Codex ve Meshy Pro. Copilot kullanılmaz.

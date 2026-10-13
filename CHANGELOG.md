@@ -1,6 +1,12 @@
 # Çekirdek değişiklikleri
 
-## Yayınlanmamış
+## 3.6.0
+Kullanıcı başlatıcı ve kontrolcü: oyun kartı aşama/aktif görev/sonraki adımı oyunun STATE.md ve
+TASK.md dosyalarından kendiliğinden okur (elle görev isteğe bağlı). Kartta ▶ Sonraki görevi başlat
+(kısa görev metni kopyalar), ✔ F5 onayı ve ✖ Hata bildir (hazır GitHub issue açar) düğmeleri.
+Tüm AI'lar: yanıt en fazla 3 satır, sorular tek mesajda en fazla 3, sonra onay beklemeden başla.
+Oyun AI'ları "Hata:"/"F5 onayı:" issue'larını işler ve bitince sonraki görevi TASK.md'ye yazar.
+Görev dağılımı ChatGPT/Codex öncelikli (Claude yalnız zor işte). Ayrıca 3.5.0 sonrası:
 actions/checkout v7.0.1 ve actions/upload-artifact v7.0.1 (Node 24) SHA ile sabitlendi;
 Node 20 kullanımdan kaldırma uyarısı giderildi. Oyun başlangıcının CI'sı da güncellendi.
 Panel: oyun kartında GitHub Issue/PR takibi (#20) çalışır hale getirildi; eksik showGitHubTasks

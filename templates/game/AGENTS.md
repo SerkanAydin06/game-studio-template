@@ -30,3 +30,6 @@ bump evidence instead of duplicating). Do not open a separate AI turn for it.
 At a milestone start run bash scripts/core-update-check.sh; apply only relevant newer core changes
 on a separate branch and update .studio/CORE_VERSION and SOURCE_COMMIT.
 Core updates are selective; never overwrite game files from a new template.
+Response style for every AI: max 3 lines (status · link · one next step). No explanations, summaries or option lists unless the user asks. Ask only blocking questions, all in one message (max 3), then start without waiting for "go".
+User control is via issues: an open "Hata:" issue is a bug report (fix test-first, PR body "Fixes #N"); a "F5 onayı:" issue is the user's acceptance (record in TESTS.md, close it). Read open issues at task start.
+When a task finishes, write the next concrete task into TASK.md so the panel's start button can launch it.

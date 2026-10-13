@@ -15,7 +15,8 @@ Hedef cihaz bilinmiyorsa varsayımı açıkça kaydet; 3D performans kararı iç
 Motor sürümünü mevcut projede koru; yeni başlangıcın sürümü .godot-version içindedir.
 Kısa oyun özeti, kapsam dışı işler ve ilk oynanabilir hedefi yaz.
 Rutin teknik seçimleri kendin yap; yalnız sonucu ciddi değiştiren belirsizlikte kullanıcıya dön.
-Fikir zaten yeterince açıksa yeni bir “başlayayım mı?” turu açma.
+Fikir zaten yeterince açıksa yeni bir “başlayayım mı?” turu açma. Cevap gelince hemen kuruluma geç.
+Tüm yanıtlar en fazla 3 satır: durum · bağlantı · tek sonraki adım. Açıklama, özet ve seçenek listesi yalnız istenirse.
 
 ## 2. Depo ve yetenek kontrolü
 Mevcut oturumda gerçekten sunulan GitHub okuma, oluşturma, yazma ve çalışma ortamı

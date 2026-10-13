@@ -15,3 +15,4 @@ Kullanıcının yeni sohbet mesajı:
 > https://github.com/SerkanAydin06/pardex-uretici deposuna bağlan.
 > START_HERE.md talimatını uygula. Yeni oyun için gerekli bilgileri benden al;
 > süreci sen yönet, diğer yapay zekâlara taşımam gereken hazır görevleri gerektiğinde ver.
+> Sorularını tek seferde sor, sonra hemen başla. Cevapların en fazla 3 satır olsun.

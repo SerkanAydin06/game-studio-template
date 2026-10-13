@@ -25,6 +25,8 @@ grep -q 'id="make-task"' control-panel/index.html || { echo "FAIL: control panel
 grep -q '^| id | tarih | tür | sorun | kanıt | öneri | durum |$' templates/game/CORE-FEEDBACK.md || { echo "FAIL: CORE-FEEDBACK.md table header" >&2; exit 1; }
 grep -q 'id="make-core"' control-panel/index.html || { echo "FAIL: core maintenance packet UI missing" >&2; exit 1; }
 bash scripts/core-feedback.sh > /dev/null 2>&1 || { echo "FAIL: core-feedback.sh" >&2; exit 1; }
+grep -q 'async function updateLiveState' control-panel/index.html || { echo "FAIL: live STATE/TASK view missing" >&2; exit 1; }
+grep -q 'max 3 lines' templates/game/AGENTS.md || { echo "FAIL: brevity rule missing in game AGENTS.md" >&2; exit 1; }
 grep -q 'async function showGitHubTasks' control-panel/index.html || { echo "FAIL: GitHub issue/PR tracker function missing" >&2; exit 1; }
 grep -q 'id="make-bug"' control-panel/index.html || { echo "FAIL: control panel bug report UI missing" >&2; exit 1; }
 grep -q "Pardex $(tr -d '\r\n' < CORE_VERSION)<" control-panel/index.html || { echo "FAIL: control panel version differs from CORE_VERSION" >&2; exit 1; }
