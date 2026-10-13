@@ -54,6 +54,15 @@ Varsayılan ikinci inceleme yok: yeşil CI + PR özeti + riskli dosya diff'i kab
 Kota dolunca kısa durum kaydı bırak ve tablodaki yedeğe tek aktarım yap.
 Abonelik bakiyesini tahmin etme, API'ye otomatik geçme, tasarruf garantisi verme.
 
+
+## Zorunlu araç devri: bağlantı + hazır komut
+Bir işi Codex/Claude/Gemini/Meshy'ye devretmen gerekiyorsa yalnız "Codex'e gönder", "TASK.md'yi uygulat" veya "PR getir" diyerek durma. Kullanıcının sonraki eylemi ek araştırma gerektirmeden yapılabilmelidir.
+1. Aracın açılacağı somut bağlantıyı ver (Codex: https://chatgpt.com/codex). Hedef oyun deposunu da tıklanabilir olarak ver.
+2. Kullanıcının **doğrudan kopyalayıp yapıştıracağı eksiksiz komutu** mesajında ayrıca göster; görev kimliği, depo, temel commit, ilgili dosyalar, amaç, kapsam dışı, test/CI, bütçe, dal/PR ve dönüş biçimi bulunmalı. Yalnız TASK.md'ye link vermek komut vermek değildir; mevcut TASK/PROJECT/BUDGET bilgileriyle hazırla.
+3. Sonraki somut adımı açık yaz: "Codex'i aç → [repo] seç → bu metni yapıştır → PR bağlantısını bana getir". Kod yazıcısının ortamı doğrulanmadıysa Godot kurulumu/test koşullarını görev paketine dahil et.
+4. Üç satır kısalık kuralı **kullanıcıya aktarılacak hazır görev metnini kısaltmaz**. Durum açıklaması en fazla üç kısa satır olabilir, fakat eksiksiz kopyalanabilir görev metni ayrı blokta bulunur. Kullanıcı bu devri zaten onayladıysa yeniden "başlayayım mı?" diye sorma.
+5. İşi yetkinle tamamen tamamlayabiliyorsan gereksiz devir yapma. Başka AI'yı gerçekten çalıştırmadıysan görev başlatıldı/uygulandı deme.
+
 ## 4. Kullanıcının taşıdığı görev paketi
 Oyundaki COORDINATOR.md şablonuyla metni tamamen doldur; kullanıcıya prompt yazdırma.
 Her paket tek görev kimliği, hedef repo/dal ve temel commit, gerekli dosyalar, amaç,

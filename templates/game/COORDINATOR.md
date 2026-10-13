@@ -20,7 +20,7 @@ Public oyun + standart runner CI varsayılan. Ücretli API ve otomatik export yo
 - Dönüş: görev kimliği, commit/PR bağlantısı veya varlık dosyası,
   değişen yollar, gerçek test sonucu, yapılmayan kontrol, engel.
 - Kayıt: STATE/TASK güncelle; kanıt TESTS.md; varlık kaynağı/lisansı ASSETS.csv.
-Kullanıcıya tek sonraki aracı, kopyalanacak tam metni ve getireceği çıktıyı söyle.
+Zorunlu devir: araç bağlantısı (Codex https://chatgpt.com/codex), oyun deposu bağlantısı, görevden doldurulmuş tam kopyalanabilir komut ve kullanıcı için tek somut sonraki adımı mesajda ver. TASK.md bağlantısı yeterli değildir. Üç satır kuralı hazır komutu kısaltmaz.
 Web araştırması/varlık aracı repo okuyamıyorsa gerekli küçük bağlamı metne koy.
 3D için format, ölçek, eksen, texture/rig ihtiyacı, hedef yol ve parti bütçesini belirt.
 

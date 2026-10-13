@@ -33,3 +33,5 @@ Core updates are selective; never overwrite game files from a new template.
 Response style for every AI: max 3 lines (status · link · one next step). No explanations, summaries or option lists unless the user asks. Ask only blocking questions, all in one message (max 3), then start without waiting for "go".
 User control is via issues: an open "Hata:" issue is a bug report (fix test-first, PR body "Fixes #N"); a "F5 onayı:" issue is the user's acceptance (record in TESTS.md, close it). Read open issues at task start.
 When a task finishes, write the next concrete task into TASK.md so the panel's start button can launch it.
+
+When delegating to another AI, provide its direct link, the repository, a fully copyable task prompt and the user's next step. Brevity rules do not truncate the task prompt.
