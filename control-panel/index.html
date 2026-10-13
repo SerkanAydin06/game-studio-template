@@ -150,8 +150,8 @@ async function showGitHubTasks(repoName,target,force=false){
  }catch(error){if(target.isConnected){target.replaceChildren();const e=document.createElement('p');e.className='muted';e.textContent='Issue / PR okunamadı: '+error.message;target.append(e)}}
 }
 function issueUrl(repoName,title,body){return 'https://github.com/'+repoName+'/issues/new?title='+encodeURIComponent(title)+'&body='+encodeURIComponent(body)}
-function startPacket(repoName,taskId){return `Pardex · https://github.com/${repoName}
-TASK.md'deki aktif görevi${taskId?' ('+taskId+')':''} yap. AGENTS.md kurallarına uy; yalnız ilgili dosyaları oku.
+function startPacket(repoName,taskId){return `Codex için hazır görev\nDepo: https://github.com/${repoName}
+TASK.md'deki aktif görevi${taskId?' ('+taskId+')':''} uygula; PROJECT.md ve BUDGET.md kabul şartlarına uy; görev dalı ve PR oluştur. AGENTS.md kurallarına uy; yalnız ilgili dosyaları oku.
 Önce açık "Hata:" issue'larını test-önce düzelt (PR'da Fixes #N); "F5 onayı:" issue'sunu kabul kanıtı say ve kapat.
 Test + CI geçmeden bitti deme. STATE/TASK güncelle; sonraki görevi TASK.md'ye yaz.
 Soru yalnız engelleyiciyse, hepsi tek mesajda. Yanıt en fazla 3 satır: durum · PR bağlantısı · tek sonraki adım. Açıklama yok.`}
@@ -226,7 +226,7 @@ const h=document.createElement('h3');h.textContent=p.name;div.append(h);
 const a=document.createElement('a');a.href='https://github.com/'+p.repo;a.target='_blank';a.rel='noopener noreferrer';a.textContent=p.repo+' ↗';div.append(a);
 const live=document.createElement('div');live.className='live-state';live.dataset.repo=p.repo;div.append(live);updateLiveState(p.repo,live);
 const ctl=document.createElement('div');ctl.className='actions';const ctlMsg=document.createElement('p');ctlMsg.className='muted';ctlMsg.setAttribute('aria-live','polite');
-const startBtn=document.createElement('button');startBtn.className='primary';startBtn.textContent='▶ Sonraki görevi başlat';startBtn.addEventListener('click',async()=>{const ok=await copyText(startPacket(p.repo,live.dataset.taskId||''));ctlMsg.textContent=ok?'Görev metni kopyalandı → ChatGPT/Codex\'e yapıştır.':'Kopyalanamadı.'});
+const startBtn=document.createElement('button');startBtn.className='primary';startBtn.textContent='▶ Codex görevi kopyala';startBtn.addEventListener('click',async()=>{const ok=await copyText(startPacket(p.repo,live.dataset.taskId||''));ctlMsg.textContent=ok?'Görev metni kopyalandı → ChatGPT/Codex\'e yapıştır.':'Kopyalanamadı.'});
 const okBtn=document.createElement('a');okBtn.className='secondary-link';okBtn.textContent='✔ F5 onayı ver';okBtn.target='_blank';okBtn.rel='noopener noreferrer';okBtn.addEventListener('click',()=>{okBtn.href=issueUrl(p.repo,'F5 onayı: '+(live.dataset.taskId||'görev'),'Godot F5 ile kontrol ettim; beklenen davranış görüldü.\nGörev: '+(live.dataset.taskId||'-')+'\nNot: ')});okBtn.href=issueUrl(p.repo,'F5 onayı','');
 const bugBtn=document.createElement('a');bugBtn.className='secondary-link';bugBtn.textContent='✖ Hata bildir';bugBtn.target='_blank';bugBtn.rel='noopener noreferrer';bugBtn.href=issueUrl(p.repo,'Hata: ','Tekrar adımları (en fazla 5):\n1. F5\n2. \nBeklenen:\nGörülen:\nİlk hata satırı (dosya:satır):\n');
 ctl.append(startBtn,okBtn,bugBtn);div.append(ctl,ctlMsg);
